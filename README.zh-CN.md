@@ -1,6 +1,6 @@
 # PS5 Repository List（简体中文）
 
-**语言 / Langue：** 简体中文（当前文档） | [Français](README.md)
+**语言 / Langue：** 简体中文（当前文档） | [Français](README.fr.md)
 
 欢迎使用 **PS5 Repository List**！这是一个用于集中收录、整理和跟踪 PS5 相关 GitHub 项目的导航平台，涵盖自制程序（Homebrew）、模拟器、WebKit 漏洞利用工具和开发实用程序等。
 
