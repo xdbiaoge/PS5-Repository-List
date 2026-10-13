@@ -1,73 +1,57 @@
-# PS5 Repository List（简体中文）
+# PS5 Repository List · 简体中文版
 
-**语言 / Langue：** 简体中文（当前文档） | [Français](README.fr.md)
+**语言：** 简体中文（默认） | [Français](README.fr.md)  
+**原作者：** [nexgen999/PS5-Repository-List](https://github.com/nexgen999/PS5-Repository-List) · **中文版：** [xdbiaoge/PS5-Repository-List](https://github.com/xdbiaoge/PS5-Repository-List)
 
-欢迎使用 **PS5 Repository List**！这是一个用于集中收录、整理和跟踪 PS5 相关 GitHub 项目的导航平台，涵盖自制程序（Homebrew）、模拟器、WebKit 漏洞利用工具和开发实用程序等。
+本项目是 PS5 自制程序、模拟器和实用工具的 GitHub 仓库导航与版本追踪站点。基于上游新版 React 界面，针对简体中文进行了适配，不更改第三方仓库地址、提交记录或发布附件。
 
-## 🌟 主要功能
+**在线访问：** https://xdbiaoge.github.io/PS5-Repository-List/
 
-- **仓库分类**：根据分类和子分类浏览 PS5 相关项目。
-- **搜索与视图**：实时搜索仓库、作者及说明；支持卡片和列表视图。
-- **更新追踪**：显示最近的 Git 提交、发布版本（Releases）及可下载文件（Assets）。
-- **多语言界面**：默认简体中文，可切换英语和法语；选择记录在浏览器本地。
-- **分类和简介汉化**：全部现有分类及带有描述的仓库均提供中文界面文字，翻译存放在 `json/translations.zh-CN.json`，不会改动原始仓库数据。
-- **自动更新**：使用 GitHub Actions 定期获取仓库元数据，并更新 JSON 数据库。
+## 特性
 
-> 注意：站点为已收录的仓库提供独立维护的简体中文简介，鼠标悬停可以查看原始描述；英语和法语界面仍显示原文。第三方仓库的 README、提交记录和版本说明保持原始语言，不进行自动翻译。若仓库作者更新简介而词库尚未同步，网站会优先显示最新原文，不使用过时的中文翻译。
+- 全新的响应式界面，支持手机、平板、电脑和 PS5 浏览器布局。
+- 27 种界面语言，**默认简体中文**；可在设置中自由选择。
+- 中文分类名称，以及收录仓库的中文简介；切换其他语言恢复 GitHub 原始简介。
+- 搜索、分类、星标、提交动态、发布版本、下载附件及 README 阅读。
+- 主题、字体、侧边栏显示方式及 REST API 地址等个性化选项。
+- GitHub Actions 每小时检查仓库元数据，中文简介覆盖率可在 Actions Summary 查看。
 
-## 📂 项目结构
+## 文件结构
 
 ```text
-├── .github/workflows/deploy.yml   # 定时更新仓库数据库
-├── json/
-│   ├── repos-config.json          # 仓库列表、分类和显示颜色配置
-│   ├── repos-database.json        # 自动生成的仓库元数据
-│   └── translations.zh-CN.json   # 中文简介词库
-├── scripts/
-│   ├── update-db.js              # GitHub API 数据同步
-│   └── check-translations.js      # 检查待翻译简介
-├── tool/config_manager.py         # Python Tkinter 图形配置管理器
-├── index.html                     # 网页主页
-├── test.html                      # 测试页面
-├── README.md                      # 中文首页说明
-├── README.fr.md                   # 原法语说明
-└── README.zh-CN.md                # 本文档
+index.html                   # 新版 React 网站入口
+test.html                    # 与主页相同的测试入口
+assets/index.js              # 上游编译的 React 前端（已接入中文适配）
+assets/index.css             # 上游前端样式
+assets/zh-adapter.js         # 中文分类及仓库简介显示适配层
+json/repos-config.json      # 原始分类、仓库清单
+json/repos-database.json    # GitHub 仓库数据库（自动更新）
+json/translations.json      # 界面多语言词库
+json/translations.zh-CN.json # 独立维护的仓库中文简介词库
+scripts/update-db.js        # 仓库信息自动更新
+scripts/check-translations.js # 中文简介覆盖率检查
+tool/config_manager.py      # Tkinter 中文图形配置管理器
+README.fr.md                # 原作者法语说明
 ```
 
-## 💻 如何使用
+## 使用与部署
 
-### 访问网页
+无须 Docker 或独立服务器。进入仓库 **Settings → Pages**，选择 **Deploy from a branch** → `main` → `/(root)`，保存后即可通过上方地址访问。
 
-这是基于 HTML、Vue 3 和 Tailwind CSS 的静态网页，无须额外部署后端服务。可通过 GitHub Pages 托管：
+默认读取本站的 `json/repos-database.json`。在设置中可以调整 REST API 地址；默认远程备选地址使用本 Fork 的 GitHub Raw 数据，不依赖原作者的站点。升级前在旧版页面保存的语言选项不影响新版的首次简体中文默认值。
 
-1. 在仓库 **Settings → Pages** 中将发布来源设为 **Deploy from a branch**。
-2. 选择 **main** 分支和 **/(root)** 目录，保存设置。
-3. Pages 发布完成后，访问仓库对应的 `https://<用户名>.github.io/<仓库名>/` 地址。
+若中文词库里记录的英文原文与最新 GitHub 简介不一致，界面会显示最新原文，防止使用过期翻译。缺失或变更项可在 GitHub Actions 更新任务的运行摘要中查看，但该检查不会阻止更新。
 
-首次访问时默认显示简体中文。右上角的 **简中** 按钮可依次切换为 **EN** 和 **FR**，再次点击可切换回简体中文。
+### 本地配置工具
 
-### 数据配置
-
-- 在 `json/repos-config.json` 中维护仓库 URL、所属分类及颜色。
-- `scripts/update-db.js` 调用 GitHub API 获取星标、最近提交、最新发布等信息，并写入 `json/repos-database.json`。
-- `.github/workflows/deploy.yml` 每小时同步数据，并在 Actions Summary 中显示新增仓库简介和过期翻译清单（仅提示，不阻断自动更新，也不会自动覆盖中文翻译）。Fork 后请到 **Actions** 确认该工作流是否已启用。
-
-### Python 图形配置管理器
-
-需要 Python 3 及 Tkinter，在仓库根目录执行：
+安装 Python 3 与 Tkinter 后，在项目根目录运行：
 
 ```bash
 python tool/config_manager.py
 ```
 
-该工具可以添加、修改或删除 GitHub 仓库与分类，设置分类名称及十六进制颜色，并将修改保存回 `json/repos-config.json`。
+默认中文界面；分类下拉框展示中文名称及原始 ID，保存时仍使用原始 `categoryId`。如需法语界面，可设置 `PS5_REPOS_LANG=fr` 环境变量。
 
-配置管理器默认使用简体中文。仓库分类下拉框展示中文名称及分类 ID，但保存到 JSON 的仍是原始 `categoryId`，不会改变项目分类关系。如需恢复法语界面，可在启动前设置环境变量 `PS5_REPOS_LANG=fr`。
+## 更新说明
 
-## 🔧 开发说明
-
-页面优先读取 `json/repos-database.json` 的实时数据；若无法加载，则使用 HTML 中内置的备用数据快照。浏览器标题和页面说明随语言切换同步更新。仓库说明、下载链接和历史提交信息来自项目原始数据，不随界面语言切换改变。
-
-## 🤝 参与贡献
-
-欢迎通过 Pull Request 完善简体中文翻译、更新 PS5 相关项目资料或修复问题。
+上游将原本的单文件 Vue 页面改为 React 编译产物。本 Fork 保留上游前端，同时通过独立适配模块维护中文分类和简介。后续同步上游时，应将新版 `assets/index.js` 中的语言与数据适配入口一并保留；不要直接覆盖中文适配模块或词库。

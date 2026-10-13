@@ -348,7 +348,7 @@
     "zh": "用于解密、加密以及重新签名 PS4/PS5 游戏存档的工具。"
   },
   "pharaoh2k/ps5debug-ng": {
-    "source": "PS5 debugger payload — userland TCP wire-protocol server hosted inside SceShellCore. GPL-3.",
+    "source": "PS5 debugger payload - userland TCP wire-protocol server hosted inside SceShellCore. GPL-3.",
     "zh": "PS5 调试器 Payload，在 SceShellCore 内运行用户态 TCP 协议服务器。"
   },
   "illusionyy/ps5-fw-spoof": {
