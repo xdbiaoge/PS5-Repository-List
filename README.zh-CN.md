@@ -57,6 +57,8 @@ python tool/config_manager.py
 
 该工具可以添加、修改或删除 GitHub 仓库与分类，设置分类名称及十六进制颜色，并将修改保存回 `json/repos-config.json`。
 
+配置管理器默认使用简体中文。如需恢复法语界面，可在启动前设置环境变量 `PS5_REPOS_LANG=fr`。
+
 ## 🔧 开发说明
 
 页面优先读取 `json/repos-database.json` 的实时数据；若无法加载，则使用 HTML 中内置的备用数据快照。仓库说明、下载链接和历史提交信息来自项目原始数据，不随界面语言切换改变。

@@ -5,13 +5,64 @@ from tkinter import colorchooser, messagebox, ttk
 
 # Comme l'outil est dans le dossier 'tools', on remonte d'un cran (..) pour accéder au dossier 'json'
 CONFIG_PATH = os.path.join(os.path.dirname(__file__), "..", "json", "repos-config.json")
+# Default to Simplified Chinese; use PS5_REPOS_LANG=fr for original French.
+LANGUAGE = os.environ.get("PS5_REPOS_LANG", "zh-CN")
+ZH_CN = {
+  "Gestionnaire de Config - PS5 Repos Hub": "PS5 仓库配置管理器",
+  "Erreur": "错误",
+  "Succès": "成功",
+  "Attention": "提示",
+  "Confirmation": "确认",
+  " Dépôts GitHub ": " GitHub 仓库 ",
+  " Catégories & Couleurs ": " 分类与颜色 ",
+  "Enregistrer tout dans le fichier JSON": "将全部修改保存到 JSON 文件",
+  " Ajouter / Modifier un dépôt ": " 添加 / 编辑仓库 ",
+  "URL GitHub du dépôt:": "GitHub 仓库地址：",
+  "Catégorie:": "分类：",
+  "Ajouter le dépôt": "添加仓库",
+  "Modifier la sélection": "修改所选仓库",
+  "Vider les champs": "清空输入",
+  "URL GitHub du Dépôt": "GitHub 仓库地址",
+  "ID Catégorie": "分类 ID",
+  "Supprimer la sélection": "删除所选仓库",
+  " Ajouter / Modifier une catégorie ": " 添加 / 编辑分类 ",
+  "ID Unique (ex: cat-emulator):": "唯一 ID（例如 cat-emulator）：",
+  "Nom d'affichage:": "显示名称：",
+  "Couleur (Hex):": "颜色（十六进制）：",
+  "Choisir...": "选择...",
+  "Ajouter Catégorie": "添加分类",
+  "Modifier Catégorie": "修改分类",
+  "Vider": "清空",
+  "Nom": "名称",
+  "Couleur": "颜色",
+  "Supprimer la catégorie": "删除分类",
+  "Choisir une couleur": "选择颜色",
+  "L'ID et le Nom de la catégorie sont obligatoires.": "分类 ID 和名称不能为空。",
+  "Sélectionnez une catégorie à modifier.": "请先选择要修改的分类。",
+  "Sélectionnez une catégorie à supprimer.": "请先选择要删除的分类。",
+  "Veuillez entrer une URL GitHub valide.": "请输入有效的 GitHub 仓库地址。",
+  "Veuillez sélectionner une catégorie.": "请选择分类。",
+  "Sélectionnez un dépôt à modifier.": "请先选择要修改的仓库。",
+  "Sélectionnez un dépôt à supprimer.": "请先选择要删除的仓库。",
+  "Impossible de lire le fichier de config :\n{e}": "无法读取配置文件：\n{e}",
+  "Configuration enregistrée avec succès dans {CONFIG_PATH} !": "配置已成功保存到 {CONFIG_PATH}！",
+  "Impossible d'enregistrer :\n{e}": "保存失败：\n{e}",
+  "Une catégorie avec l'ID '{cid}' existe déjà.": "分类 ID“{cid}”已存在。",
+  "Voulez-vous vraiment supprimer la catégorie '{cid}' ?": "确定要删除分类“{cid}”吗？",
+  "Supprimer le dépôt :\n{url} ?": "确定要删除仓库吗？\n{url}"
+}
+
+def _(message):
+  return ZH_CN.get(message, message) if LANGUAGE == "zh-CN" else message
+
+
 
 
 class ConfigManagerApp:
 
   def __init__(self, root):
     self.root = root
-    self.root.title("Gestionnaire de Config - PS5 Repos Hub")
+    self.root.title(_("Gestionnaire de Config - PS5 Repos Hub"))
     self.root.geometry("850x600")
     self.root.minsize(700, 500)
 
@@ -31,7 +82,7 @@ class ConfigManagerApp:
           self.data = json.load(f)
       except Exception as e:
         messagebox.showerror(
-            "Erreur", f"Impossible de lire le fichier de config :\n{e}"
+            _("Erreur"), _("Impossible de lire le fichier de config :\n{e}").format(e=e)
         )
     if "categories" not in self.data:
       self.data["categories"] = []
@@ -46,10 +97,10 @@ class ConfigManagerApp:
         json.dump(self.data, f, indent=2, ensure_ascii=False)
       # CORRECTION : Remplacement de messagebox.succès par messagebox.showinfo
       messagebox.showinfo(
-          "Succès", f"Configuration enregistrée avec succès dans {CONFIG_PATH} !"
+          _("Succès"), _("Configuration enregistrée avec succès dans {CONFIG_PATH} !").format(CONFIG_PATH=CONFIG_PATH)
       )
     except Exception as e:
-      messagebox.showerror("Erreur", f"Impossible d'enregistrer :\n{e}")
+      messagebox.showerror(_("Erreur"), _("Impossible d'enregistrer :\n{e}").format(e=e))
 
   def create_widgets(self):
     # Utilisation d'un Notebook (Onglets)
@@ -58,18 +109,18 @@ class ConfigManagerApp:
 
     # --- ONGLET 1 : DÉPÔTS (REPOS) ---
     self.tab_repos = ttk.Frame(notebook)
-    notebook.add(self.tab_repos, text=" Dépôts GitHub ")
+    notebook.add(self.tab_repos, text=_(" Dépôts GitHub "))
     self.setup_repos_tab()
 
     # --- ONGLET 2 : CATÉGORIES ---
     self.tab_cats = ttk.Frame(notebook)
-    notebook.add(self.tab_cats, text=" Catégories & Couleurs ")
+    notebook.add(self.tab_cats, text=_(" Catégories & Couleurs "))
     self.setup_cats_tab()
 
     # Bouton global de sauvegarde en bas
     btn_save = tk.Button(
         self.root,
-        text="Enregistrer tout dans le fichier JSON",
+        text=_("Enregistrer tout dans le fichier JSON"),
         bg="#22c55e",
         fg="white",
         font=("Arial", 11, "bold"),
@@ -79,11 +130,11 @@ class ConfigManagerApp:
 
   def setup_repos_tab(self):
     form_frame = ttk.LabelFrame(
-        self.tab_repos, text=" Ajouter / Modifier un dépôt "
+        self.tab_repos, text=_(" Ajouter / Modifier un dépôt ")
     )
     form_frame.pack(fill=tk.X, padx=10, pady=10)
 
-    tk.Label(form_frame, text="URL GitHub du dépôt:").grid(
+    tk.Label(form_frame, text=_("URL GitHub du dépôt:")).grid(
         row=0, column=0, sticky="w", padx=5, pady=5
     )
     self.repo_url_entry = tk.Entry(
@@ -91,7 +142,7 @@ class ConfigManagerApp:
     )
     self.repo_url_entry.grid(row=0, column=1, padx=5, pady=5)
 
-    tk.Label(form_frame, text="Catégorie:").grid(
+    tk.Label(form_frame, text=_("Catégorie:")).grid(
         row=1, column=0, sticky="w", padx=5, pady=5
     )
     self.repo_cat_combo = ttk.Combobox(
@@ -105,20 +156,20 @@ class ConfigManagerApp:
 
     tk.Button(
         btn_frame,
-        text="Ajouter le dépôt",
+        text=_("Ajouter le dépôt"),
         bg="#3b82f6",
         fg="white",
         command=self.add_repo,
     ).pack(side=tk.LEFT, padx=5)
     tk.Button(
         btn_frame,
-        text="Modifier la sélection",
+        text=_("Modifier la sélection"),
         bg="#f59e0b",
         fg="white",
         command=self.update_repo,
     ).pack(side=tk.LEFT, padx=5)
     tk.Button(
-        btn_frame, text="Vider les champs", command=self.clear_repo_form
+        btn_frame, text=_("Vider les champs"), command=self.clear_repo_form
     ).pack(side=tk.LEFT, padx=5)
 
     tree_frame = ttk.Frame(self.tab_repos)
@@ -127,8 +178,8 @@ class ConfigManagerApp:
     self.repo_tree = ttk.Treeview(
         tree_frame, columns=("url", "category"), show="headings", height=12
     )
-    self.repo_tree.heading("url", text="URL GitHub du Dépôt")
-    self.repo_tree.heading("category", text="ID Catégorie")
+    self.repo_tree.heading("url", text=_("URL GitHub du Dépôt"))
+    self.repo_tree.heading("category", text=_("ID Catégorie"))
     self.repo_tree.column("url", width=500)
     self.repo_tree.column("category", width=200)
 
@@ -146,7 +197,7 @@ class ConfigManagerApp:
     action_frame.pack(fill=tk.X, padx=10, pady=5)
     tk.Button(
         action_frame,
-        text="Supprimer la sélection",
+        text=_("Supprimer la sélection"),
         bg="#ef4444",
         fg="white",
         command=self.delete_repo,
@@ -156,23 +207,23 @@ class ConfigManagerApp:
 
   def setup_cats_tab(self):
     form_frame = ttk.LabelFrame(
-        self.tab_cats, text=" Ajouter / Modifier une catégorie "
+        self.tab_cats, text=_(" Ajouter / Modifier une catégorie ")
     )
     form_frame.pack(fill=tk.X, padx=10, pady=10)
 
-    tk.Label(form_frame, text="ID Unique (ex: cat-emulator):").grid(
+    tk.Label(form_frame, text=_("ID Unique (ex: cat-emulator):")).grid(
         row=0, column=0, sticky="w", padx=5, pady=5
     )
     self.cat_id_entry = tk.Entry(form_frame, width=30, font=("Arial", 10))
     self.cat_id_entry.grid(row=0, column=1, padx=5, pady=5)
 
-    tk.Label(form_frame, text="Nom d'affichage:").grid(
+    tk.Label(form_frame, text=_("Nom d'affichage:")).grid(
         row=1, column=0, sticky="w", padx=5, pady=5
     )
     self.cat_name_entry = tk.Entry(form_frame, width=30, font=("Arial", 10))
     self.cat_name_entry.grid(row=1, column=1, padx=5, pady=5)
 
-    tk.Label(form_frame, text="Couleur (Hex):").grid(
+    tk.Label(form_frame, text=_("Couleur (Hex):")).grid(
         row=2, column=0, sticky="w", padx=5, pady=5
     )
     color_frame = tk.Frame(form_frame)
@@ -183,7 +234,7 @@ class ConfigManagerApp:
     self.cat_color_entry.insert(0, "#3B82F6")
 
     tk.Button(
-        color_frame, text="Choisir...", command=self.pick_color
+        color_frame, text=_("Choisir..."), command=self.pick_color
     ).pack(side=tk.LEFT)
 
     btn_frame = tk.Frame(form_frame)
@@ -191,20 +242,20 @@ class ConfigManagerApp:
 
     tk.Button(
         btn_frame,
-        text="Ajouter Catégorie",
+        text=_("Ajouter Catégorie"),
         bg="#3b82f6",
         fg="white",
         command=self.add_category,
     ).pack(side=tk.LEFT, padx=5)
     tk.Button(
         btn_frame,
-        text="Modifier Catégorie",
+        text=_("Modifier Catégorie"),
         bg="#f59e0b",
         fg="white",
         command=self.update_category,
     ).pack(side=tk.LEFT, padx=5)
     tk.Button(
-        btn_frame, text="Vider", command=self.clear_cat_form
+        btn_frame, text=_("Vider"), command=self.clear_cat_form
     ).pack(side=tk.LEFT, padx=5)
 
     tree_frame = ttk.Frame(self.tab_cats)
@@ -214,8 +265,8 @@ class ConfigManagerApp:
         tree_frame, columns=("id", "name", "color"), show="headings", height=8
     )
     self.cat_tree.heading("id", text="ID")
-    self.cat_tree.heading("name", text="Nom")
-    self.cat_tree.heading("color", text="Couleur")
+    self.cat_tree.heading("name", text=_("Nom"))
+    self.cat_tree.heading("color", text=_("Couleur"))
     self.cat_tree.column("id", width=200)
     self.cat_tree.column("name", width=300)
     self.cat_tree.column("color", width=150)
@@ -227,7 +278,7 @@ class ConfigManagerApp:
     action_frame.pack(fill=tk.X, padx=10, pady=5)
     tk.Button(
         action_frame,
-        text="Supprimer la catégorie",
+        text=_("Supprimer la catégorie"),
         bg="#ef4444",
         fg="white",
         command=self.delete_category,
@@ -236,7 +287,7 @@ class ConfigManagerApp:
     self.refresh_cat_list()
 
   def pick_color(self):
-    color = colorchooser.askcolor(title="Choisir une couleur")
+    color = colorchooser.askcolor(title=_("Choisir une couleur"))
     if color[1]:
       self.cat_color_entry.delete(0, tk.END)
       self.cat_color_entry.insert(0, color[1])
@@ -269,12 +320,12 @@ class ConfigManagerApp:
 
     if not cid or not cname:
       messagebox.showwarning(
-          "Attention", "L'ID et le Nom de la catégorie sont obligatoires."
+          _("Attention"), _("L'ID et le Nom de la catégorie sont obligatoires.")
       )
       return
 
     if any(c["id"] == cid for c in self.data["categories"]):
-      messagebox.showerror("Erreur", f"Une catégorie avec l'ID '{cid}' existe déjà.")
+      messagebox.showerror(_("Erreur"), _("Une catégorie avec l'ID '{cid}' existe déjà.").format(cid=cid))
       return
 
     self.data["categories"].append(
@@ -286,7 +337,7 @@ class ConfigManagerApp:
   def update_category(self):
     selected = self.cat_tree.selection()
     if not selected:
-      messagebox.showwarning("Attention", "Sélectionnez une catégorie à modifier.")
+      messagebox.showwarning(_("Attention"), _("Sélectionnez une catégorie à modifier."))
       return
     item = self.cat_tree.item(selected)
     old_id = item["values"][0]
@@ -307,13 +358,13 @@ class ConfigManagerApp:
   def delete_category(self):
     selected = self.cat_tree.selection()
     if not selected:
-      messagebox.showwarning("Attention", "Sélectionnez une catégorie à supprimer.")
+      messagebox.showwarning(_("Attention"), _("Sélectionnez une catégorie à supprimer."))
       return
     item = self.cat_tree.item(selected)
     cid = item["values"][0]
 
     if messagebox.askyesno(
-        "Confirmation", f"Voulez-vous vraiment supprimer la catégorie '{cid}' ?"
+        _("Confirmation"), _("Voulez-vous vraiment supprimer la catégorie '{cid}' ?").format(cid=cid)
     ):
       self.data["categories"] = [
           c for c in self.data["categories"] if c["id"] != cid
@@ -352,12 +403,12 @@ class ConfigManagerApp:
 
     if not url or "github.com" not in url:
       messagebox.showwarning(
-          "Attention", "Veuillez entrer une URL GitHub valide."
+          _("Attention"), _("Veuillez entrer une URL GitHub valide.")
       )
       return
     if not cat_id:
       messagebox.showwarning(
-          "Attention", "Veuillez sélectionner une catégorie."
+          _("Attention"), _("Veuillez sélectionner une catégorie.")
       )
       return
 
@@ -368,7 +419,7 @@ class ConfigManagerApp:
   def update_repo(self):
     selected = self.repo_tree.selection()
     if not selected:
-      messagebox.showwarning("Attention", "Sélectionnez un dépôt à modifier.")
+      messagebox.showwarning(_("Attention"), _("Sélectionnez un dépôt à modifier."))
       return
     item = self.repo_tree.item(selected)
     old_url = item["values"][0]
@@ -387,13 +438,13 @@ class ConfigManagerApp:
   def delete_repo(self):
     selected = self.repo_tree.selection()
     if not selected:
-      messagebox.showwarning("Attention", "Sélectionnez un dépôt à supprimer.")
+      messagebox.showwarning(_("Attention"), _("Sélectionnez un dépôt à supprimer."))
       return
     item = self.repo_tree.item(selected)
     url = item["values"][0]
 
     if messagebox.askyesno(
-        "Confirmation", f"Supprimer le dépôt :\n{url} ?"
+        _("Confirmation"), _("Supprimer le dépôt :\n{url} ?").format(url=url)
     ):
       self.data["repos"] = [r for r in self.data["repos"] if r["url"] != url]
       self.refresh_repo_list()
