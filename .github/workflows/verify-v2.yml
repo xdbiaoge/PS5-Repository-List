@@ -1,0 +1,29 @@
+name: React v2 browser smoke test
+
+on:
+  push:
+    branches:
+      - debug/react-v2-browser-smoke
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  browser-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - id: chrome
+        uses: browser-actions/setup-chrome@v2
+      - name: Install browser driver
+        run: npm install --prefix /tmp/ps5-browser --no-audit --no-fund playwright-core
+      - name: Serve site
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 > /tmp/ps5-server.log 2>&1 &
+          sleep 2
+      - name: Check rendered page
+        env:
+          CHROME_PATH: ${{ steps.chrome.outputs.chrome-path }}
+        run: node scripts/v2-smoke-test.cjs
