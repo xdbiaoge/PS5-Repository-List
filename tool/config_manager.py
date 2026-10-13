@@ -55,6 +55,9 @@ ZH_CN = {
 def _(message):
   return ZH_CN.get(message, message) if LANGUAGE == "zh-CN" else message
 
+# Same category IDs and names as the website, used only for display.
+CATEGORY_ZH_CN = json.loads("{\"cat-frontend\":\"PS5 模拟器\",\"cat-backend\":\"WebKit 漏洞利用\",\"cat-desktop-mobile\":\"PC 应用程序\",\"cat-PS5_Cheat\":\"PS5 金手指工具\",\"cat-PS5_Overlay\":\"PS5 叠加层插件\",\"cat-PS5_Remote\":\"PS5 远程控制与串流\",\"cat-ps5-webkit-autoloader\":\"PS5 WebKit 自动加载器\",\"cat-ps5_audio_utility\":\"PS5 音频工具\",\"cat-ps5_dns\":\"PS5 DNS 工具\",\"cat-ps5_emulator\":\"PS5 模拟器\",\"cat-ps5_fan\":\"PS5 风扇控制\",\"cat-ps5_file_explorer\":\"PS5 文件管理器\",\"cat-ps5_freeshop\":\"PS5 应用与游戏商店\",\"cat-ps5_game_dump\":\"PS5 游戏转储与挂载\",\"cat-ps5_hen_loader\":\"PS5 HEN 与加载器\",\"cat-ps5_kstuff\":\"PS5 kstuff 组件\",\"cat-ps5_linux\":\"PS5 Linux\",\"cat-ps5_pad_utility\":\"PS5 手柄工具\",\"cat-ps5_pkg_tool\":\"PS5 PKG 工具\",\"cat-ps5_saves\":\"PS5 游戏存档管理\",\"cat-ps5_sdk_debug\":\"PS5 开发与调试\",\"cat-ps5_server\":\"PS5 远程服务器\",\"cat-ps5_themes-avatars\":\"PS5 主题与头像\",\"cat-ps5_utility\":\"PS5 综合工具\",\"cat-ps5_video_player\":\"PS5 视频与媒体播放\",\"cat-ps5_cloud_gaming\":\"PS5 云游戏\"}")
+
 
 
 
@@ -68,6 +71,7 @@ class ConfigManagerApp:
 
     # Données en mémoire
     self.data = {"categories": [], "repos": []}
+    self.repo_category_choices = {}
 
     self.load_config()
 
@@ -181,7 +185,7 @@ class ConfigManagerApp:
     self.repo_tree.heading("url", text=_("URL GitHub du Dépôt"))
     self.repo_tree.heading("category", text=_("ID Catégorie"))
     self.repo_tree.column("url", width=500)
-    self.repo_tree.column("category", width=200)
+    self.repo_tree.column("category", width=275)
 
     scrollbar = ttk.Scrollbar(
         tree_frame, orient=tk.VERTICAL, command=self.repo_tree.yview
@@ -307,11 +311,28 @@ class ConfigManagerApp:
       )
     self.update_category_dropdowns()
 
+  def category_display(self, category_id):
+    """Show a Chinese label but preserve the original stable ID."""
+    if not category_id:
+      return ""
+    if LANGUAGE != "zh-CN":
+      return category_id
+    match = next((c for c in self.data["categories"] if c["id"] == category_id), None)
+    label = CATEGORY_ZH_CN.get(category_id) or (match.get("name") if match else category_id)
+    return f"{label} [{category_id}]"
+
   def update_category_dropdowns(self):
-    cat_ids = [cat["id"] for cat in self.data["categories"]]
-    self.repo_cat_combo["values"] = cat_ids
-    if cat_ids and not self.repo_cat_combo.get():
-      self.repo_cat_combo.current(0)
+    previous = self.repo_cat_combo.get()
+    previous_id = self.repo_category_choices.get(previous, previous)
+    self.repo_category_choices = {
+        self.category_display(cat["id"]): cat["id"] for cat in self.data["categories"]
+    }
+    self.repo_cat_combo["values"] = list(self.repo_category_choices)
+    selected = next(
+        (label for label, cid in self.repo_category_choices.items() if cid == previous_id),
+        None
+    )
+    self.repo_cat_combo.set(selected or next(iter(self.repo_category_choices), ""))
 
   def add_category(self):
     cid = self.cat_id_entry.get().strip()
@@ -394,12 +415,12 @@ class ConfigManagerApp:
       self.repo_tree.delete(row)
     for repo in self.data["repos"]:
       self.repo_tree.insert(
-          "", tk.END, values=(repo.get("url"), repo.get("categoryId"))
+          "", tk.END, values=(repo.get("url"), self.category_display(repo.get("categoryId")))
       )
 
   def add_repo(self):
     url = self.repo_url_entry.get().strip()
-    cat_id = self.repo_cat_combo.get().strip()
+    cat_id = self.repo_category_choices.get(self.repo_cat_combo.get().strip(), "")
 
     if not url or "github.com" not in url:
       messagebox.showwarning(
@@ -425,7 +446,7 @@ class ConfigManagerApp:
     old_url = item["values"][0]
 
     new_url = self.repo_url_entry.get().strip()
-    cat_id = self.repo_cat_combo.get().strip()
+    cat_id = self.repo_category_choices.get(self.repo_cat_combo.get().strip(), "")
 
     for repo in self.data["repos"]:
       if repo["url"] == old_url:
