@@ -1,5 +1,7 @@
 # PS5 Repository List
 
+**语言 / Langue：** [简体中文](README.zh-CN.md) | Français（当前文档）
+
 Bienvenue sur le dépôt **PS5 Repository List**, une plateforme centralisée et automatisée conçue pour suivre, organiser et présenter les dépôts GitHub essentiels de l'écosystème PS5 (homebrews, émulateurs, outils de développement et utilitaires).
 
 ---

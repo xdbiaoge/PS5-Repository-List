@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="fr" class="dark">
+<html lang="zh-CN" class="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>PS5-Repository-List - Hub & Release Tracker</title>
-  <meta name="description" content="Visualiseur universel de dépôts GitHub pour PS5 avec suivi des commits récents et téléchargement des releases." />
+  <title>PS5 Repository List - PS5 仓库与版本追踪</title>
+  <meta name="description" content="PS5 GitHub 项目导航与版本追踪：查看仓库更新、最近提交、发布版本和下载附件。" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
@@ -63,7 +63,7 @@
         </div>
         <div>
           <span class="font-bold text-base tracking-tight text-white">PS5-Repository-List</span>
-          <span class="text-xs text-slate-400 hidden sm:inline ml-2 border-l border-slate-700 pl-2">Hub & Release Tracker</span>
+          <span class="text-xs text-slate-400 hidden sm:inline ml-2 border-l border-slate-700 pl-2">{{ t('siteTagline') }}</span>
         </div>
       </div>
 
@@ -88,7 +88,7 @@
           class="bg-indigo-600 hover:bg-indigo-700 text-white border border-indigo-500 px-3 py-1.5 rounded-lg font-bold flex items-center gap-1.5 transition shadow-sm"
         >
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-          What's New
+          {{ t('whatsNew') }}
         </button>
 
         <!-- View Mode Switcher: Tuiles / Liste -->
@@ -97,7 +97,7 @@
             @click="viewMode = 'tiles'" 
             :class="viewMode === 'tiles' ? 'bg-blue-600 text-white' : 'text-slate-400 hover:text-slate-200'"
             class="px-2.5 py-1 rounded-md font-medium transition text-xs flex items-center gap-1"
-            title="Vue Tuiles"
+            :title="t('tilesView')"
           >
             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v16zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-16z"></path></svg>
           </button>
@@ -105,7 +105,7 @@
             @click="viewMode = 'list'" 
             :class="viewMode === 'list' ? 'bg-blue-600 text-white' : 'text-slate-400 hover:text-slate-200'"
             class="px-2.5 py-1 rounded-md font-medium transition text-xs flex items-center gap-1"
-            title="Vue Liste"
+            :title="t('listView')"
           >
             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
           </button>
@@ -116,17 +116,18 @@
           @click="useDrawer = !useDrawer" 
           :class="useDrawer ? 'bg-indigo-600/20 text-indigo-300 border-indigo-500/40' : 'bg-slate-800 text-slate-300 border-slate-700'"
           class="border px-2.5 py-1.5 rounded-lg font-medium transition hidden sm:inline-block"
-          title="Alterner entre le panneau latéral et la popup"
+          :title="t('togglePanel')"
         >
-          Panneau: {{ useDrawer ? 'Activé' : 'Désactivé' }}
+          {{ t('panel') }}: {{ useDrawer ? t('enabled') : t('disabled') }}
         </button>
 
-        <!-- Bouton FR / EN -->
+        <!-- Language selector: Simplified Chinese, English, French -->
         <button 
           @click="toggleLang" 
+          :title="t('switchLanguage')"
           class="bg-slate-800 text-slate-200 border border-slate-700 px-2.5 py-1.5 rounded-lg font-bold hover:bg-slate-700 transition"
         >
-          {{ currentLang.toUpperCase() }}
+          {{ currentLang === 'zh-CN' ? '简中' : currentLang.toUpperCase() }}
         </button>
 
         <button 
@@ -168,7 +169,7 @@
             >
               <span class="flex items-center gap-2 truncate">
                 <span class="w-2 h-2 rounded-full" :style="{ backgroundColor: cat.color || '#3b82f6' }"></span>
-                <span class="truncate">{{ cat.name }}</span>
+                <span class="truncate">{{ localizedCatName(cat) }}</span>
               </span>
               <span class="font-mono text-slate-500 text-[11px]">{{ getCategoryRepoCount(cat.id) }}</span>
             </button>
@@ -182,7 +183,7 @@
                 :class="selectedCategory === sub.id ? 'bg-blue-600/20 text-blue-300 font-semibold border border-blue-500/30' : 'text-slate-400 hover:bg-slate-800/40 hover:text-slate-200'"
                 class="w-full text-left px-2 py-1 rounded-md flex items-center justify-between transition text-[11px]"
               >
-                <span class="truncate">{{ sub.name }}</span>
+                <span class="truncate">{{ localizedCatName(sub) }}</span>
                 <span class="font-mono text-slate-500 text-[10px]">{{ getCategoryRepoCount(sub.id) }}</span>
               </button>
             </div>
@@ -259,8 +260,8 @@
                 <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between gap-2 text-xs">
                   <span class="font-mono text-slate-400 text-[11px]">★ {{ repo.stars.toLocaleString() }}</span>
                   <div class="flex items-center gap-1">
-                    <button @click="openCommits(repo)" class="px-2 py-1 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded text-xs transition">Commits</button>
-                    <button v-if="repo.latestRelease" @click="openRelease(repo)" class="px-2 py-1 bg-emerald-950/60 hover:bg-emerald-900 text-emerald-300 border border-emerald-800/60 rounded text-xs transition">Assets</button>
+                    <button @click="openCommits(repo)" class="px-2 py-1 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded text-xs transition">{{ t('commits') }}</button>
+                    <button v-if="repo.latestRelease" @click="openRelease(repo)" class="px-2 py-1 bg-emerald-950/60 hover:bg-emerald-900 text-emerald-300 border border-emerald-800/60 rounded text-xs transition">{{ t('assets') }}</button>
                     <button @click="openReadme(repo)" class="px-2 py-1 bg-blue-950/60 hover:bg-blue-900 text-blue-300 border border-blue-800/60 rounded text-xs transition">README</button>
                   </div>
                 </div>
@@ -283,21 +284,21 @@
               <table class="w-full text-left text-xs">
                 <thead class="bg-slate-950/60 text-slate-400 border-b border-slate-800 uppercase tracking-wider text-[11px]">
                   <tr>
-                    <th class="py-3 px-4">Alerte</th>
-                    <th class="py-3 px-4">Dépôt</th>
-                    <th class="py-3 px-4">Auteur</th>
-                    <th class="py-3 px-4">Catégorie</th>
-                    <th class="py-3 px-4">Langage</th>
-                    <th class="py-3 px-4">Stars</th>
-                    <th class="py-3 px-4">Dernier Commit</th>
-                    <th class="py-3 px-4">Release & Assets</th>
-                    <th class="py-3 px-4 text-right">Actions</th>
+                    <th class="py-3 px-4">{{ t('alert') }}</th>
+                    <th class="py-3 px-4">{{ t('repository') }}</th>
+                    <th class="py-3 px-4">{{ t('author') }}</th>
+                    <th class="py-3 px-4">{{ t('category') }}</th>
+                    <th class="py-3 px-4">{{ t('language') }}</th>
+                    <th class="py-3 px-4">{{ t('stars') }}</th>
+                    <th class="py-3 px-4">{{ t('lastCommit') }}</th>
+                    <th class="py-3 px-4">{{ t('releasesAssetsHeader') }}</th>
+                    <th class="py-3 px-4 text-right">{{ t('actions') }}</th>
                   </tr>
                 </thead>
                 <tbody class="divide-y divide-slate-800/60">
                   <tr v-for="repo in group.repos" :key="repo.id" class="hover:bg-slate-800/40 transition">
                     <td class="py-3 px-4">
-                      <span v-if="repo.hasNewCommitsAlert" class="w-7 h-7 rounded-full bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400" title="Commit récent">
+                      <span v-if="repo.hasNewCommitsAlert" class="w-7 h-7 rounded-full bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400" :title="t('recentCommit')">
                         🔔
                       </span>
                     </td>
@@ -312,7 +313,7 @@
                     </td>
                     <td class="py-3 px-4 text-slate-300">{{ repo.owner }}</td>
                     <td class="py-3 px-4 text-slate-400">{{ getCategoryName(repo.categoryId) }}</td>
-                    <td class="py-3 px-4 font-mono text-slate-300">{{ repo.language || 'Unknown' }}</td>
+                    <td class="py-3 px-4 font-mono text-slate-300">{{ repo.language || t('unknown') }}</td>
                     <td class="py-3 px-4 font-mono text-slate-300">★ {{ repo.stars.toLocaleString() }}</td>
                     <td class="py-3 px-4 font-mono text-slate-400">{{ formatCommitDate(repo.pushedAt) }}</td>
                     <td class="py-3 px-4">
@@ -323,9 +324,9 @@
                     </td>
                     <td class="py-3 px-4 text-right">
                       <div class="flex items-center justify-end gap-1.5">
-                        <button @click="openReadme(repo)" class="p-1.5 bg-slate-800 hover:bg-slate-700 text-blue-300 rounded transition" title="Voir README">📄</button>
-                        <button @click="openCommits(repo)" class="p-1.5 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded transition" title="Commits récents">⚙️</button>
-                        <button v-if="repo.latestRelease" @click="openRelease(repo)" class="p-1.5 bg-slate-800 hover:bg-slate-700 text-emerald-300 rounded transition" title="Assets">📦</button>
+                        <button @click="openReadme(repo)" class="p-1.5 bg-slate-800 hover:bg-slate-700 text-blue-300 rounded transition" :title="t('viewReadme')">📄</button>
+                        <button @click="openCommits(repo)" class="p-1.5 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded transition" :title="t('recentCommits')">⚙️</button>
+                        <button v-if="repo.latestRelease" @click="openRelease(repo)" class="p-1.5 bg-slate-800 hover:bg-slate-700 text-emerald-300 rounded transition" :title="t('assets')">📦</button>
                       </div>
                     </td>
                   </tr>
@@ -369,7 +370,7 @@
         <div class="p-4 border-b border-slate-800 flex items-center justify-between bg-slate-950/80">
           <div class="flex items-center gap-2">
             <span class="text-lg">🔥</span>
-            <h3 class="font-bold text-sm text-white">What's New - Dernières Mises à Jour (Releases)</h3>
+            <h3 class="font-bold text-sm text-white">{{ t('releaseUpdatesTitle') }}</h3>
           </div>
           <button @click="showWhatsNewDrawer = false" class="text-slate-400 hover:text-white px-2 py-1 rounded text-xl font-bold">&times;</button>
         </div>
@@ -377,7 +378,7 @@
         <!-- Liste chronologique -->
         <div class="p-6 overflow-y-auto flex-1 space-y-4">
           <div v-if="reposWithReleasesSorted.length === 0" class="text-center py-12 text-slate-500">
-            <p>Aucune release récente trouvée.</p>
+            <p>{{ t('noRecentReleases') }}</p>
           </div>
 
           <div 
@@ -390,7 +391,7 @@
                 <img :src="repo.ownerAvatar" class="w-7 h-7 rounded-full border border-slate-700 bg-slate-800" />
                 <div>
                   <a :href="repo.htmlUrl" target="_blank" class="font-bold text-sm text-white hover:text-blue-400 transition">{{ repo.name }}</a>
-                  <span class="text-[11px] text-slate-400 block">{{ repo.owner }} · Catégorie: {{ getCategoryName(repo.categoryId) }}</span>
+                  <span class="text-[11px] text-slate-400 block">{{ repo.owner }} · {{ t('category') }}: {{ getCategoryName(repo.categoryId) }}</span>
                 </div>
               </div>
               <span class="px-2.5 py-1 rounded-md bg-emerald-950/80 border border-emerald-800/80 text-emerald-300 font-mono text-xs font-semibold">
@@ -399,18 +400,18 @@
             </div>
 
             <div class="text-xs text-slate-300 bg-slate-900/60 p-3 rounded-lg border border-slate-800/60">
-              <p class="font-semibold text-white mb-1">{{ repo.latestRelease.name || 'Mise à jour' }}</p>
-              <p class="text-slate-400 line-clamp-3">{{ repo.latestRelease.body || 'Pas de description de release.' }}</p>
+              <p class="font-semibold text-white mb-1">{{ repo.latestRelease.name || t('update') }}</p>
+              <p class="text-slate-400 line-clamp-3">{{ repo.latestRelease.body || t('noReleaseDesc') }}</p>
             </div>
 
             <div class="flex items-center justify-between text-xs pt-1 border-t border-slate-800/60">
-              <span class="text-slate-500 font-mono">Publié le {{ formatDate(repo.latestRelease.publishedAt) }}</span>
+              <span class="text-slate-500 font-mono">{{ t('publishedOn') }} {{ formatDate(repo.latestRelease.publishedAt) }}</span>
               <div class="flex items-center gap-2">
                 <span v-if="repo.latestRelease.assets?.length > 0" class="text-slate-400 font-mono text-[11px]">
-                  📦 {{ repo.latestRelease.assets.length }} asset(s)
+                  📦 {{ repo.latestRelease.assets.length }} {{ t('files') }}
                 </span>
                 <button @click="showWhatsNewDrawer = false; openRelease(repo)" class="px-3 py-1 bg-blue-600 hover:bg-blue-500 text-white rounded font-medium transition">
-                  Voir les assets &rarr;
+                  {{ t('viewAssets') }} &rarr;
                 </button>
               </div>
             </div>
@@ -438,7 +439,7 @@
       <div class="bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-2xl max-h-[80vh] flex flex-col shadow-2xl">
         <div class="p-4 border-b border-slate-800 flex items-center justify-between">
           <div>
-            <h3 class="font-bold text-sm text-white">Commits Récents · {{ activeCommitsRepo.fullName }}</h3>
+            <h3 class="font-bold text-sm text-white">{{ t('recentCommits') }} · {{ activeCommitsRepo.fullName }}</h3>
           </div>
           <button @click="activeCommitsRepo = null" class="text-slate-400 hover:text-white px-2 py-1 rounded text-base">&times;</button>
         </div>
@@ -467,29 +468,29 @@
               <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono text-xs font-semibold">
                 {{ activeReleaseRepo.latestRelease.tagName }}
               </span>
-              <h3 class="font-bold text-sm text-white">{{ activeReleaseRepo.latestRelease.name || 'Release' }}</h3>
+              <h3 class="font-bold text-sm text-white">{{ activeReleaseRepo.latestRelease.name || t('release') }}</h3>
             </div>
-            <span class="text-xs text-slate-400">Publié le {{ formatDate(activeReleaseRepo.latestRelease.publishedAt) }}</span>
+            <span class="text-xs text-slate-400">{{ t('publishedOn') }} {{ formatDate(activeReleaseRepo.latestRelease.publishedAt) }}</span>
           </div>
           <button @click="activeReleaseRepo = null" class="text-slate-400 hover:text-white px-2 py-1 rounded text-base">&times;</button>
         </div>
 
         <div class="p-6 overflow-y-auto flex-1 space-y-6">
           <div>
-            <h4 class="font-semibold text-xs text-slate-300 uppercase tracking-wider mb-2">Assets Disponibles au Téléchargement</h4>
+            <h4 class="font-semibold text-xs text-slate-300 uppercase tracking-wider mb-2">{{ t('downloadableAssets') }}</h4>
             <div class="space-y-2">
               <div v-for="asset in activeReleaseRepo.latestRelease.assets" :key="asset.id" class="p-3 bg-slate-950 border border-slate-800 rounded-lg flex items-center justify-between gap-3 text-xs">
                 <div>
                   <span class="font-mono font-medium text-slate-200 block">{{ asset.name }}</span>
-                  <span class="text-slate-500 text-[11px]">Taille: {{ formatBytes(asset.size) }} · {{ asset.downloadCount }} téléchargements</span>
+                  <span class="text-slate-500 text-[11px]">{{ t('size') }}: {{ formatBytes(asset.size) }} · {{ asset.downloadCount }} {{ t('downloads') }}</span>
                 </div>
-                <a :href="asset.downloadUrl" download target="_blank" class="px-3 py-1.5 bg-blue-600 hover:bg-blue-500 text-white font-medium rounded-md transition shrink-0">Télécharger</a>
+                <a :href="asset.downloadUrl" download target="_blank" class="px-3 py-1.5 bg-blue-600 hover:bg-blue-500 text-white font-medium rounded-md transition shrink-0">{{ t('download') }}</a>
               </div>
             </div>
           </div>
 
           <div v-if="activeReleaseRepo.latestRelease.body">
-            <h4 class="font-semibold text-xs text-slate-300 uppercase tracking-wider mb-2">Notes de Version & Changelog</h4>
+            <h4 class="font-semibold text-xs text-slate-300 uppercase tracking-wider mb-2">{{ t('releaseNotes') }}</h4>
             <div class="markdown-body p-4 bg-slate-950/70 border border-slate-800 rounded-lg text-xs" v-html="renderMarkdown(activeReleaseRepo.latestRelease.body, activeReleaseRepo)"></div>
           </div>
         </div>
@@ -511,45 +512,184 @@
         const useDrawer = ref(false);
         const showWhatsNewDrawer = ref(false);
         const isLiveData = ref(false);
-        const currentLang = ref('fr');
+        const currentLang = ref('zh-CN');
 
         const i18n = {
-          fr: {
-            searchPlaceholder: 'Rechercher (dépôt, auteur, tag, techno)...',
-            commitAlerts: 'Alertes Commits',
-            categories: 'Catégories',
-            allCategories: 'Toutes les catégories',
-            trackedRepos: 'Dépôts suivis',
-            commitAlerts3d: 'Alertes commits (3j)',
-            releasesAssets: 'Releases & Assets',
-            dataSource: 'Source de données',
-            githubPages: 'GitHub Pages (Live JSON)',
-            embeddedSnapshot: 'Snapshot Embarqué',
-            noReposFound: 'Aucun dépôt ne correspond aux critères de recherche.',
-            noDescription: 'Aucune description disponible.',
-            allRepos: 'Tous les Dépôts',
-            otherUnassigned: 'Non classé'
+          "zh-CN": {
+            "siteTagline": "PS5 项目导航与版本追踪",
+            "searchPlaceholder": "搜索仓库、作者、标签或技术…",
+            "whatsNew": "最近更新",
+            "tilesView": "卡片视图",
+            "listView": "列表视图",
+            "togglePanel": "切换侧边栏与弹窗显示",
+            "panel": "侧边栏",
+            "enabled": "已启用",
+            "disabled": "已关闭",
+            "switchLanguage": "切换语言（简体中文 / English / Français）",
+            "commitAlerts": "提交提醒",
+            "categories": "分类",
+            "allCategories": "全部分类",
+            "trackedRepos": "已收录仓库",
+            "commitAlerts3d": "近 3 天提交提醒",
+            "releasesAssets": "发布版本与附件",
+            "dataSource": "数据来源",
+            "githubPages": "GitHub Pages（实时 JSON）",
+            "embeddedSnapshot": "内置数据快照",
+            "noReposFound": "没有找到符合搜索条件的仓库。",
+            "noDescription": "暂无描述。",
+            "allRepos": "全部仓库",
+            "otherUnassigned": "未分类",
+            "commits": "提交记录",
+            "assets": "附件",
+            "alert": "提醒",
+            "repository": "仓库",
+            "author": "作者",
+            "category": "分类",
+            "language": "开发语言",
+            "stars": "星标数",
+            "lastCommit": "最近提交",
+            "releasesAssetsHeader": "发布版本与附件",
+            "actions": "操作",
+            "recentCommit": "最近有新提交",
+            "unknown": "未知",
+            "viewReadme": "查看 README",
+            "recentCommits": "最近提交记录",
+            "releaseUpdatesTitle": "最近更新 · 发布版本",
+            "noRecentReleases": "暂未发现近期发布的版本。",
+            "update": "版本更新",
+            "noReleaseDesc": "暂无版本说明。",
+            "publishedOn": "发布时间：",
+            "files": "个文件",
+            "viewAssets": "查看下载文件",
+            "release": "发布版本",
+            "downloadableAssets": "可下载文件",
+            "size": "大小",
+            "downloads": "次下载",
+            "download": "下载",
+            "releaseNotes": "版本说明与更新日志",
+            "noContent": "暂无内容。"
           },
-          en: {
-            searchPlaceholder: 'Search (repository, author, tag, tech)...',
-            commitAlerts: 'Commit Alerts',
-            categories: 'Categories',
-            allCategories: 'All Categories',
-            trackedRepos: 'Tracked Repositories',
-            commitAlerts3d: 'Commit Alerts (3d)',
-            releasesAssets: 'Releases & Assets',
-            dataSource: 'Data Source',
-            githubPages: 'GitHub Pages (Live JSON)',
-            embeddedSnapshot: 'Embedded Snapshot',
-            noReposFound: 'No repositories match your search criteria.',
-            noDescription: 'No description available.',
-            allRepos: 'All Repositories',
-            otherUnassigned: 'Unassigned'
+          "fr": {
+            "siteTagline": "Hub & Release Tracker",
+            "searchPlaceholder": "Rechercher (dépôt, auteur, tag, techno)...",
+            "whatsNew": "What's New",
+            "tilesView": "Vue Tuiles",
+            "listView": "Vue Liste",
+            "togglePanel": "Alterner entre le panneau latéral et la popup",
+            "panel": "Panneau",
+            "enabled": "Activé",
+            "disabled": "Désactivé",
+            "switchLanguage": "Changer de langue",
+            "commitAlerts": "Alertes Commits",
+            "categories": "Catégories",
+            "allCategories": "Toutes les catégories",
+            "trackedRepos": "Dépôts suivis",
+            "commitAlerts3d": "Alertes commits (3j)",
+            "releasesAssets": "Releases & Assets",
+            "dataSource": "Source de données",
+            "githubPages": "GitHub Pages (Live JSON)",
+            "embeddedSnapshot": "Snapshot Embarqué",
+            "noReposFound": "Aucun dépôt ne correspond aux critères de recherche.",
+            "noDescription": "Aucune description disponible.",
+            "allRepos": "Tous les Dépôts",
+            "otherUnassigned": "Non classé",
+            "commits": "Commits",
+            "assets": "Assets",
+            "alert": "Alerte",
+            "repository": "Dépôt",
+            "author": "Auteur",
+            "category": "Catégorie",
+            "language": "Langage",
+            "stars": "Stars",
+            "lastCommit": "Dernier Commit",
+            "releasesAssetsHeader": "Release & Assets",
+            "actions": "Actions",
+            "recentCommit": "Commit récent",
+            "unknown": "Unknown",
+            "viewReadme": "Voir README",
+            "recentCommits": "Commits Récents",
+            "releaseUpdatesTitle": "What's New - Dernières Mises à Jour (Releases)",
+            "noRecentReleases": "Aucune release récente trouvée.",
+            "update": "Mise à jour",
+            "noReleaseDesc": "Pas de description de release.",
+            "publishedOn": "Publié le",
+            "files": "asset(s)",
+            "viewAssets": "Voir les assets",
+            "release": "Release",
+            "downloadableAssets": "Assets Disponibles au Téléchargement",
+            "size": "Taille",
+            "downloads": "téléchargements",
+            "download": "Télécharger",
+            "releaseNotes": "Notes de Version & Changelog",
+            "noContent": "Aucun contenu."
+          },
+          "en": {
+            "siteTagline": "Hub & Release Tracker",
+            "searchPlaceholder": "Search (repository, author, tag, tech)...",
+            "whatsNew": "What's New",
+            "tilesView": "Tile View",
+            "listView": "List View",
+            "togglePanel": "Switch between side panel and popup",
+            "panel": "Panel",
+            "enabled": "Enabled",
+            "disabled": "Disabled",
+            "switchLanguage": "Change language",
+            "commitAlerts": "Commit Alerts",
+            "categories": "Categories",
+            "allCategories": "All Categories",
+            "trackedRepos": "Tracked Repositories",
+            "commitAlerts3d": "Commit Alerts (3d)",
+            "releasesAssets": "Releases & Assets",
+            "dataSource": "Data Source",
+            "githubPages": "GitHub Pages (Live JSON)",
+            "embeddedSnapshot": "Embedded Snapshot",
+            "noReposFound": "No repositories match your search criteria.",
+            "noDescription": "No description available.",
+            "allRepos": "All Repositories",
+            "otherUnassigned": "Unassigned",
+            "commits": "Commits",
+            "assets": "Assets",
+            "alert": "Alert",
+            "repository": "Repository",
+            "author": "Author",
+            "category": "Category",
+            "language": "Language",
+            "stars": "Stars",
+            "lastCommit": "Last Commit",
+            "releasesAssetsHeader": "Release & Assets",
+            "actions": "Actions",
+            "recentCommit": "Recent commit",
+            "unknown": "Unknown",
+            "viewReadme": "View README",
+            "recentCommits": "Recent Commits",
+            "releaseUpdatesTitle": "What's New - Latest Releases",
+            "noRecentReleases": "No recent releases found.",
+            "update": "Update",
+            "noReleaseDesc": "No release notes available.",
+            "publishedOn": "Published",
+            "files": "asset(s)",
+            "viewAssets": "View assets",
+            "release": "Release",
+            "downloadableAssets": "Downloadable Assets",
+            "size": "Size",
+            "downloads": "downloads",
+            "download": "Download",
+            "releaseNotes": "Release Notes & Changelog",
+            "noContent": "No content available."
           }
         };
-
-        const t = (key) => i18n[currentLang.value][key] || key;
-        const toggleLang = () => { currentLang.value = currentLang.value === 'fr' ? 'en' : 'fr'; };
+        const t = (key) => i18n[currentLang.value]?.[key] || i18n['zh-CN'][key] || key;
+        const localeOrder = ['zh-CN', 'en', 'fr'];
+        const toggleLang = () => {
+          currentLang.value = localeOrder[(localeOrder.indexOf(currentLang.value) + 1) % localeOrder.length];
+          document.documentElement.lang = currentLang.value;
+          try { localStorage.setItem('ps5-repository-list-language', currentLang.value); } catch (e) {}
+        };
+        const localizedCatName = (cat) => {
+          if (currentLang.value !== 'zh-CN') return cat.name;
+          const names = { 'cat-frontend': 'PS5 模拟器', 'cat-backend': 'WebKit 漏洞利用', 'cat-desktop-mobile': 'PC 应用程序' };
+          return names[cat.id] || cat.name;
+        };
 
         const activeReadmeRepo = ref(null);
         const activeCommitsRepo = ref(null);
@@ -563,6 +703,11 @@
         const embeddedDatabase = {"version":"2.0.0","exportedAt":"2026-10-11T19:32:48.909Z","appName":"PS5-Repository-List","categories":[{"id":"cat-frontend","name":"PS5 Emulator","description":"PS5 Emulator","icon":"Layout","color":"#3B82F6","parentId":null,"order":0},{"id":"cat-backend","name":"Webkit exploit","description":"Webkit exploit","icon":"Atom","color":"#10B981","parentId":null,"order":1},{"id":"cat-desktop-mobile","name":"PC APPS","description":"Applications Windows","icon":"Monitor","color":"#3B82F6","parentId":null,"order":2}],"repos":[{"id":"repo-1791741722787","url":"https://github.com/blackbearreloaded/ProsperoLight","owner":"blackbearreloaded","ownerAvatar":"https://avatars.githubusercontent.com/u/316784285?v=4","name":"ProsperoLight","fullName":"blackbearreloaded/ProsperoLight","description":"An unofficial Moonlight port (game streaming) for PS5","customNotes":"","tags":[],"categoryId":"unassigned","stars":110,"forks":9,"openIssues":3,"language":"C++","license":"GPL-3.0","defaultBranch":"main","pushedAt":"2026-10-11T17:58:10Z","updatedAt":"2026-10-11T16:34:35Z","htmlUrl":"https://github.com/blackbearreloaded/ProsperoLight","readme":"# ProsperoLight\nMoonlight game streaming natively on PlayStation 5.","hasNewCommitsAlert":true,"recentCommits":[{"sha":"a8796ff","message":"Finalize approved release notes","authorName":"Nikita Dybov","date":"2026-10-11T14:23:28Z","url":"https://github.com/blackbearreloaded/ProsperoLight/commit/a8796ff"}],"latestRelease":{"tagName":"01.000.095","name":"ProsperoLight 01.000.095","publishedAt":"2026-10-11T14:33:33Z","body":"### Améliorations majeures et correctifs.\n- Optimisation du streaming.\n- Stabilité accrue sur PS5.","assets":[{"id":1,"name":"PPSA99002.zip","size":37863705,"downloadCount":17,"downloadUrl":"#"}]}}]};
 
         onMounted(async () => {
+          try {
+            const savedLang = localStorage.getItem('ps5-repository-list-language');
+            if (localeOrder.includes(savedLang)) currentLang.value = savedLang;
+          } catch (e) {}
+          document.documentElement.lang = currentLang.value;
           try {
             const res = await fetch('./json/repos-database.json', { cache: 'no-cache' });
             if (res.ok) {
@@ -587,7 +732,7 @@
         };
         const getCategoryName = (catId) => {
           const cat = categories.value.find(c => c.id === catId);
-          return cat ? cat.name : t('otherUnassigned');
+          return cat ? localizedCatName(cat) : t('otherUnassigned');
         };
 
         const alertReposCount = computed(() => repos.value.filter(r => r.hasNewCommitsAlert).length);
@@ -617,14 +762,14 @@
         const repoGroups = computed(() => {
           if (selectedCategory.value) {
             const currentCat = categories.value.find(c => c.id === selectedCategory.value);
-            return [{ title: currentCat ? currentCat.name : t('allRepos'), repos: filteredRepos.value }];
+            return [{ title: currentCat ? localizedCatName(currentCat) : t('allRepos'), repos: filteredRepos.value }];
           }
 
           const groups = [];
           rootCategories.value.forEach(cat => {
             const subIds = categories.value.filter(c => c.parentId === cat.id).map(c => c.id);
             const matching = filteredRepos.value.filter(r => [cat.id, ...subIds].includes(r.categoryId));
-            if (matching.length > 0) groups.push({ title: cat.name, repos: matching });
+            if (matching.length > 0) groups.push({ title: localizedCatName(cat), repos: matching });
           });
 
           const coveredIds = rootCategories.value.flatMap(c => [c.id, ...categories.value.filter(sub => sub.parentId === c.id).map(sub => sub.id)]);
@@ -638,7 +783,7 @@
         });
 
         const renderMarkdown = (text, repo) => {
-          if (!text) return `<p>Aucun contenu.</p>`;
+          if (!text) return `<p>${t('noContent')}</p>`;
           try {
             let processedText = text;
             if (repo && repo.htmlUrl) {
@@ -680,7 +825,7 @@
         const openCommits = (repo) => {
           if (useDrawer.value) {
             drawerType.value = 'commits';
-            activeDrawerTitle.value = `Commits · ${repo.fullName}`;
+            activeDrawerTitle.value = `${t('commits')} · ${repo.fullName}`;
             activeDrawerData.value = repo;
             activeDrawerContent.value = true;
           } else {
@@ -698,16 +843,17 @@
           return parseFloat((bytes / Math.pow(k, i)).toFixed(1)) + ' ' + sizes[i];
         };
 
-        const formatDate = (dateStr) => dateStr ? new Date(dateStr).toLocaleDateString() : '';
+        const dateLocale = () => currentLang.value === 'zh-CN' ? 'zh-CN' : (currentLang.value === 'en' ? 'en-US' : 'fr-FR');
+        const formatDate = (dateStr) => dateStr ? new Date(dateStr).toLocaleDateString(dateLocale()) : '';
         const formatCommitDate = (dateStr) => {
           if (!dateStr) return '';
           const d = new Date(dateStr);
-          return d.toLocaleDateString('fr-FR', { day: '2-digit', month: 'short' }) + ', ' + d.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' });
+          return d.toLocaleDateString(dateLocale(), { day: '2-digit', month: 'short' }) + ', ' + d.toLocaleTimeString(dateLocale(), { hour: '2-digit', minute: '2-digit' });
         };
 
         return {
           categories, repos, searchQuery, selectedCategory, filterOnlyAlerts, viewMode, useDrawer, showWhatsNewDrawer, isLiveData, currentLang,
-          t, toggleLang, rootCategories, getSubcategories, getCategoryRepoCount, getCategoryName, alertReposCount, reposWithReleasesCount,
+          t, toggleLang, localizedCatName, rootCategories, getSubcategories, getCategoryRepoCount, getCategoryName, alertReposCount, reposWithReleasesCount,
           reposWithReleasesSorted, filteredRepos, repoGroups, activeReadmeRepo, activeCommitsRepo, activeReleaseRepo,
           activeDrawerContent, drawerType, activeDrawerTitle, activeDrawerData,
           openWhatsNew, renderMarkdown, openReadme, openCommits, openRelease, closeDrawer, formatBytes, formatDate, formatCommitDate
