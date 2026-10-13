@@ -252,8 +252,8 @@
                     </span>
                   </div>
 
-                  <p class="text-xs text-slate-400 mt-2.5 line-clamp-2 leading-relaxed">
-                    {{ repo.description || t('noDescription') }}
+                  <p class="text-xs text-slate-400 mt-2.5 line-clamp-2 leading-relaxed" :title="currentLang === 'zh-CN' ? (repo.description || '') : ''">
+                    {{ localizedRepoDescription(repo) }}
                   </p>
                 </div>
 
@@ -307,7 +307,7 @@
                         <img :src="repo.ownerAvatar" class="w-6 h-6 rounded-full bg-slate-800 border border-slate-700" />
                         <div>
                           <a :href="repo.htmlUrl" target="_blank" class="text-white hover:text-blue-400 font-bold block">{{ repo.name }}</a>
-                          <span class="text-[11px] text-slate-400 line-clamp-1 max-w-xs">{{ repo.description }}</span>
+                          <span class="text-[11px] text-slate-400 line-clamp-1 max-w-xs" :title="currentLang === 'zh-CN' ? (repo.description || '') : ''">{{ localizedRepoDescription(repo) }}</span>
                         </div>
                       </div>
                     </td>
@@ -505,6 +505,7 @@
       setup() {
         const categories = ref([]);
         const repos = ref([]);
+        const descriptionTranslations = ref({});
         const searchQuery = ref('');
         const selectedCategory = ref(null);
         const filterOnlyAlerts = ref(false);
@@ -687,8 +688,45 @@
         };
         const localizedCatName = (cat) => {
           if (currentLang.value !== 'zh-CN') return cat.name;
-          const names = { 'cat-frontend': 'PS5 模拟器', 'cat-backend': 'WebKit 漏洞利用', 'cat-desktop-mobile': 'PC 应用程序' };
+          const names = {
+            "cat-frontend": "PS5 模拟器",
+            "cat-backend": "WebKit 漏洞利用",
+            "cat-desktop-mobile": "PC 应用程序",
+            "cat-PS5_Cheat": "PS5 金手指工具",
+            "cat-PS5_Overlay": "PS5 叠加层插件",
+            "cat-PS5_Remote": "PS5 远程控制与串流",
+            "cat-ps5-webkit-autoloader": "PS5 WebKit 自动加载器",
+            "cat-ps5_audio_utility": "PS5 音频工具",
+            "cat-ps5_dns": "PS5 DNS 工具",
+            "cat-ps5_emulator": "PS5 模拟器",
+            "cat-ps5_fan": "PS5 风扇控制",
+            "cat-ps5_file_explorer": "PS5 文件管理器",
+            "cat-ps5_freeshop": "PS5 应用与游戏商店",
+            "cat-ps5_game_dump": "PS5 游戏转储与挂载",
+            "cat-ps5_hen_loader": "PS5 HEN 与加载器",
+            "cat-ps5_kstuff": "PS5 kstuff 组件",
+            "cat-ps5_linux": "PS5 Linux",
+            "cat-ps5_pad_utility": "PS5 手柄工具",
+            "cat-ps5_pkg_tool": "PS5 PKG 工具",
+            "cat-ps5_saves": "PS5 游戏存档管理",
+            "cat-ps5_sdk_debug": "PS5 开发与调试",
+            "cat-ps5_server": "PS5 远程服务器",
+            "cat-ps5_themes-avatars": "PS5 主题与头像",
+            "cat-ps5_utility": "PS5 综合工具",
+            "cat-ps5_video_player": "PS5 视频与媒体播放",
+            "cat-ps5_cloud_gaming": "PS5 云游戏"
+          };
           return names[cat.id] || cat.name;
+        };
+
+        // Keep GitHub descriptions untouched; translations are only a display overlay.
+        // If an upstream description changes, show its latest original until retranslated.
+        const localizedRepoDescription = (repo) => {
+          if (!repo.description) return t('noDescription');
+          if (currentLang.value !== 'zh-CN') return repo.description;
+          const key = (repo.fullName || '').toLowerCase();
+          const entry = descriptionTranslations.value[key];
+          return entry && entry.source === repo.description ? entry.zh : repo.description;
         };
 
         const activeReadmeRepo = ref(null);
@@ -708,6 +746,11 @@
             if (localeOrder.includes(savedLang)) currentLang.value = savedLang;
           } catch (e) {}
           document.documentElement.lang = currentLang.value;
+          // Translation lookup loads independently so a failed request never blocks repository data.
+          fetch('./json/translations.zh-CN.json', { cache: 'no-cache' })
+            .then(res => res.ok ? res.json() : {})
+            .then(data => { descriptionTranslations.value = data && typeof data === 'object' ? data : {}; })
+            .catch(() => {});
           try {
             const res = await fetch('./json/repos-database.json', { cache: 'no-cache' });
             if (res.ok) {
@@ -753,7 +796,11 @@
             }
             if (searchQuery.value.trim()) {
               const q = searchQuery.value.toLowerCase().trim();
-              return r.name?.toLowerCase().includes(q) || r.owner?.toLowerCase().includes(q) || r.description?.toLowerCase().includes(q);
+              return r.name?.toLowerCase().includes(q)
+                || r.owner?.toLowerCase().includes(q)
+                || r.description?.toLowerCase().includes(q)
+                || localizedRepoDescription(r).toLowerCase().includes(q)
+                || getCategoryName(r.categoryId).toLowerCase().includes(q);
             }
             return true;
           });
@@ -853,7 +900,7 @@
 
         return {
           categories, repos, searchQuery, selectedCategory, filterOnlyAlerts, viewMode, useDrawer, showWhatsNewDrawer, isLiveData, currentLang,
-          t, toggleLang, localizedCatName, rootCategories, getSubcategories, getCategoryRepoCount, getCategoryName, alertReposCount, reposWithReleasesCount,
+          t, toggleLang, localizedCatName, localizedRepoDescription, rootCategories, getSubcategories, getCategoryRepoCount, getCategoryName, alertReposCount, reposWithReleasesCount,
           reposWithReleasesSorted, filteredRepos, repoGroups, activeReadmeRepo, activeCommitsRepo, activeReleaseRepo,
           activeDrawerContent, drawerType, activeDrawerTitle, activeDrawerData,
           openWhatsNew, renderMarkdown, openReadme, openCommits, openRelease, closeDrawer, formatBytes, formatDate, formatCommitDate

@@ -1,0 +1,738 @@
+{
+  "notmaj0r/cheatrunner": {
+    "source": "Web-Based Cheat Trainer for PS5!",
+    "zh": "适用于 PS5 的网页金手指修改工具。"
+  },
+  "aydencharles/kylin-core-release": {
+    "source": "kylin-core-release",
+    "zh": "kylin-core-release 项目的发布仓库。"
+  },
+  "porhe911/common-fps-for-ps5": {
+    "source": "Common FPS for PS5 v1.0.0  First public stable release.  Universal real-time FPS overlay for PS4 and PS5 games on PS5.  This release includes both a standalone ELF and an etaHEN plugin.",
+    "zh": "适用于 PS5 上 PS4/PS5 游戏的通用实时 FPS 显示插件（v1.0.0），包含独立 ELF 和 etaHEN 插件。"
+  },
+  "stonedmodder/actremotelink-13.x": {
+    "source": "Updated for FW 13.x - ActRemoteLink is a utility suite for PS5 workflows. It enables offline local account activation and Chiaki/Remote Play. Key features include changing account IDs offline, generating Remote Play PINs via system notifications, and monitoring successful pairing using a Python sender script to orchestrate the ELF payloads.",
+    "zh": "适配 13.x 固件的 PS5 工具集，支持离线激活本地账号、Chiaki/远程游玩、离线修改账号 ID、生成配对 PIN 和监测配对状态。"
+  },
+  "itsplk/ps5-webkit-autoloader": {
+    "source": "An automated payload loader for exploited PS5 consoles",
+    "zh": "适用于已破解 PS5 的自动化 Payload 加载器。"
+  },
+  "menfis911/fgg-playpods-gui": {
+    "source": "AudioBridge — GUI: PS5 Bluetooth A2DP Web GUI, based on FGG-PlayPods by FathiGhanem.",
+    "zh": "AudioBridge 图形管理界面：基于 FGG-PlayPods，为 PS5 蓝牙 A2DP 音频提供 Web 控制界面。"
+  },
+  "fggstore/fgg-playpods": {
+    "source": "Hear your PS5 on any Bluetooth headset — game audio and system sounds streamed over the console's own Bluetooth, no dongle, DualSense stays wireless. Payload for jailbroken PS5.",
+    "zh": "让已破解的 PS5 直接通过主机蓝牙向耳机传输游戏及系统音频，无需外接适配器，DualSense 仍可无线使用。"
+  },
+  "drakmor/nanodns": {
+    "source": "Playstation 4/5 DNS proxy server",
+    "zh": "PlayStation 4/5 的 DNS 代理服务器。"
+  },
+  "al-azif/chukei-dns": {
+    "source": "Lightweight DNS relay server with DNS-over-HTTPS (DoH) and man-in-the-middle (MitM) functionality",
+    "zh": "轻量级 DNS 中继服务器，支持加密 DNS（DoH）及中间人（MitM）功能。"
+  },
+  "mistertemaki/snes9xps5": {
+    "source": "Port of Snes9x 1.63 for PS5",
+    "zh": "Snes9x 1.63 的 PS5 移植版，可运行 SNES 游戏。"
+  },
+  "mistertemaki/genplusgxps5": {
+    "source": "Port of Genesis-Plus-GX for PS5",
+    "zh": "Genesis Plus GX 模拟器的 PS5 移植版。"
+  },
+  "s0liton/rommps": {
+    "source": "A RomM server client for jailbroken PS5s. Download games from your server, full bi-directional save sync support, and extensible emulator profiles to quickly support new emulators as they release on the console.",
+    "zh": "适用于已破解 PS5 的 RomM 客户端，可从自建服务器下载游戏，双向同步存档，并通过可扩展配置支持新模拟器。"
+  },
+  "mistertemaki/fbneo-ps5": {
+    "source": "Port of Final Burn Neo for PS5",
+    "zh": "FinalBurn Neo 街机模拟器的 PS5 移植版。"
+  },
+  "mistertemaki/fceummps5": {
+    "source": "Port of FCEUmm for PS5",
+    "zh": "FCEUmm（FC/NES 模拟器）的 PS5 移植版。"
+  },
+  "brinootk/ps5x360": {
+    "source": "Experimental Xbox 360 emulator for PlayStation 5, built on Xenia Canary with native audio, DualSense input and RADV Vulkan graphics.",
+    "zh": "基于 Xenia Canary 的实验性 Xbox 360 模拟器，支持 PS5 原生音频、DualSense 输入和 RADV Vulkan 图形。"
+  },
+  "zizc3/xpsemu": {
+    "source": "Original Xbox emulator (Xemu) port for the PS5",
+    "zh": "初代 Xbox 模拟器 Xemu 的 PS5 移植版。"
+  },
+  "brinootk/castation": {
+    "source": "A Dreamcast emulator that runs natively on a jailbroken PlayStation 5, built on the Flycast core.",
+    "zh": "基于 Flycast 核心的 Dreamcast 模拟器，可在已破解的 PS5 上原生运行。"
+  },
+  "elripalda/porpoise-dolphin-emulator-for-ps5": {
+    "source": "A native GameCube and Wii emulator for jailbroken PS5, powered by Dolphin. Cover-flow library, box art, memory cards, original music.",
+    "zh": "基于 Dolphin 的 PS5 原生 GameCube/Wii 模拟器，支持封面墙、游戏封面、记忆卡和原版音乐。"
+  },
+  "gordonprosperoman/xash3d-ps5": {
+    "source": "Half-Life (Xash3D FWGS) native homebrew port for PlayStation 5",
+    "zh": "《半条命》Xash3D FWGS 引擎的 PS5 原生自制程序移植版。"
+  },
+  "lowbit/ps5-doom": {
+    "source": "Native DOOM for PS5: the original linuxdoom-1.10 source on AGC compute, DualSense and AudioOut, with a launcher that adds your own WADs from a PC or phone browser, a link or a folder, including zip, 7z and rar.",
+    "zh": "PS5 原生《DOOM》移植版，基于 linuxdoom-1.10，支持 DualSense、音频输出及通过浏览器或压缩包导入 WAD。"
+  },
+  "rafaelngp/pico8-ps5": {
+    "source": "Run the official PICO-8 (Linux build, bring your own license) as a native app on jailbroken PS5",
+    "zh": "在已破解 PS5 上原生运行官方 Linux 版 PICO-8，需自行准备合法授权。"
+  },
+  "mpereiraesaa/prospero-win": {
+    "source": "Windows compatibility runtime for native PlayStation 5 homebrew.",
+    "zh": "为 PS5 原生自制软件提供 Windows 兼容运行环境。"
+  },
+  "tsuramatsu1/vita3k-ps5": {
+    "source": "Experimental PlayStation Vita emulator port for PS5",
+    "zh": "实验性的 PlayStation Vita 模拟器 PS5 移植版。"
+  },
+  "dmzebro/ps5_rpcs3": {
+    "source": "Re-upload of PS5_RPCS3",
+    "zh": "PS5_RPCS3 项目的重新上传版本。"
+  },
+  "tsuramatsu1/psp5": {
+    "source": "Native PSP port for the ps5 based on PPSSPP",
+    "zh": "基于 PPSSPP 的 PSP 模拟器 PS5 原生移植版。"
+  },
+  "griches/ps5_dusklight": {
+    "source": "Dusklight for PlayStation 5: a homebrew port on RADV (Aurora, Dawn WebGPU, SDL3). Bring your own disc image.",
+    "zh": "PS5 平台的 Dusklight 自制程序移植版，基于 RADV、Aurora、Dawn WebGPU 和 SDL3，需要自备光盘镜像。"
+  },
+  "premohq/ps5cemu-har": {
+    "source": "Wii U and 3DS emulation for PS5 homebrew (Cemu + Azahar)",
+    "zh": "面向 PS5 自制程序的 Wii U 与 3DS 模拟方案，结合 Cemu 和 Azahar。"
+  },
+  "swordpdf/ps5sx2": {
+    "source": "A port of PCSX2 for PS5",
+    "zh": "PCSX2（PlayStation 2 模拟器）的 PS5 移植版。"
+  },
+  "rafaelngp/xbox-cloud-gaming-ps5": {
+    "source": "Xbox Cloud Gaming app for PS5 Homebrew",
+    "zh": "适用于 PS5 自制程序环境的 Xbox 云游戏客户端。"
+  },
+  "synopiia/psxs5": {
+    "source": "PSXS5 (PlayStation X Super 5): a PlayStation 1 emulator running natively on jailbroken PS5, based on PCSX-ReARMed. Cover-flow shelf, xBR upscaling, RetroAchievements, cheats.",
+    "zh": "基于 PCSX-ReARMed 的 PS5 原生 PS1 模拟器，支持封面墙、xBR 画面增强、RetroAchievements 和金手指。"
+  },
+  "mihawk-99/ps5_retroarch": {
+    "source": "🎮 RetroArch Homebrew for the PS5 that supports 33 cores & 44 systems.",
+    "zh": "PS5 自制版 RetroArch，支持 33 个模拟核心与 44 种游戏系统。"
+  },
+  "darkxex/swanstationps5": {
+    "source": "SwanStationPS5 (PSXS5 Fork to work with the SwanStation core): a PlayStation 1 emulator running natively on jailbroken PS5, based on SwanStation.  https://discord.gg/MseFnnfYzt",
+    "zh": "基于 SwanStation 核心的 PS5 原生 PS1 模拟器，源自 PSXS5 分支。"
+  },
+  "stonedmodder/vita5": {
+    "source": "Play a PS Vita on the PS5 over one USB cable.",
+    "zh": "通过一根 USB 数据线，在 PS5 上使用 PS Vita。"
+  },
+  "jmelovich/steam-link-ps5": {
+    "source": "An unofficial Steam Remote Play client for PS5",
+    "zh": "适用于 PS5 的非官方 Steam 远程串流客户端。"
+  },
+  "blackbearreloaded/prosperoeden": {
+    "source": "Experimental Eden port for PS5",
+    "zh": "PS5 上 Eden 模拟器的实验性移植版。"
+  },
+  "tertiumndatur/ps5-cloud-play": {
+    "source": "A Chiaki-based cloud streaming client for PS5 that streams games from PS Plus Premium catalog.",
+    "zh": "基于 Chiaki 的 PS5 云串流客户端，支持串流游玩 PS Plus Premium 游戏目录。"
+  },
+  "heydemoura/ps5-forwarder-manager": {
+    "source": "Forwarder Manager: native PS5 homebrew app to create and edit home-screen forwarders (port of ps5-forwarder.mph.am)",
+    "zh": "PS5 原生快捷启动器管理工具，可创建和编辑主屏幕快捷入口。"
+  },
+  "owendswang/ps5-fan-control": {
+    "source": "Small PS5 daemon keeps applying fan temperature threshold.",
+    "zh": "持续设置风扇温度阈值的小型 PS5 后台守护程序。"
+  },
+  "drakmor/fan_target": {
+    "source": "PS5 fan controller",
+    "zh": "PS5 风扇控制器。"
+  },
+  "itsblurf/bfpilot": {
+    "source": "Lightweight PS5 file manager | browser based",
+    "zh": "基于浏览器的轻量级 PS5 文件管理器。"
+  },
+  "owendswang/ps5-web-file-manager": {
+    "source": "A file manager for PS5 with a web UI.",
+    "zh": "提供 Web 界面的 PS5 文件管理器。"
+  },
+  "juma-sayeh/ps5-file-explorer": {
+    "source": "Browser-based PS5 file explorer payload",
+    "zh": "基于浏览器的 PS5 文件资源管理器 Payload。"
+  },
+  "arksama/ps5-lapy-jb-daemon": {
+    "source": "Standalone homebrew jailbreak daemon for PS5. Mimics etaHEN's jailbreak-on-demand API. Multi-firmware (3.00 to 12.00) via ps5-payload-sdk + kstuff. No etaHEN required.",
+    "zh": "独立的 PS5 越狱守护进程，模拟 etaHEN 按需越狱 API，支持多版本固件且不依赖 etaHEN。"
+  },
+  "pegasus-ps5/pegasus-dl": {
+    "source": "Direct package downloading from your PS5",
+    "zh": "直接在 PS5 上下载 PKG 安装包。"
+  },
+  "ps5xploit/ps5shopappkg": {
+    "source": "ps5shopappkg",
+    "zh": "ps5shopappkg 项目仓库。"
+  },
+  "rdiol12/ps5library": {
+    "source": "Native PS5Library console storefront. Frontend source and automated ELF builds.",
+    "zh": "PS5 原生应用商店前端，提供源码和自动构建的 ELF 文件。"
+  },
+  "pratikhacktr/ps5-phstore": {
+    "source": "Free Gaming Store app , Bedava Oyun Mağazası",
+    "zh": "免费的 PS5 游戏商店应用。"
+  },
+  "saawant12/orbit-store-ps5": {
+    "source": "A modern PS5 download manager with a native TV app, phone controls and Orbit Zero for Mac, Windows and Linux.",
+    "zh": "现代化 PS5 下载管理器，提供原生电视应用、手机远程控制，以及 Mac/Windows/Linux 端 Orbit Zero。"
+  },
+  "overdriveps5/game-store": {
+    "source": "Overdrive: a game store for jailbroken PS5s",
+    "zh": "适用于已破解 PS5 的 Overdrive 游戏商店。"
+  },
+  "d3athly/blackbox": {
+    "source": "BB",
+    "zh": "BlackBox（BB）项目仓库。"
+  },
+  "juma-sayeh/ps5-game-compressor": {
+    "source": "Standalone PS5 payload for compressing, unpacking, validating, and repairing ShadowMountPlus-mounted games",
+    "zh": "独立 PS5 Payload，可对 ShadowMountPlus 挂载的游戏进行压缩、解包、校验和修复。"
+  },
+  "drakmor/shadowmountplus": {
+    "source": "Automated background auto-mounter payload for jailbroken PS5 consoles. Detects, mounts, and installs game backups from internal or external storage, with support for UFS, exFAT, PFS, and nested compressed PFS containers.",
+    "zh": "适用于已破解 PS5 的自动后台挂载 Payload，可从内部或外部存储识别、挂载和安装游戏备份，支持 UFS、exFAT、PFS 和嵌套压缩 PFS。"
+  },
+  "bestpig/backpork": {
+    "source": "Lets you sideload system libraries into PS5 games",
+    "zh": "允许向 PS5 游戏侧载系统库。"
+  },
+  "drakmor/dlc_emu": {
+    "source": "Standalone PS5 replacement modules that expose DLC entries from config file",
+    "zh": "PS5 独立替换模块，可读取配置文件并向系统呈现 DLC 条目。"
+  },
+  "drakmor/pgo_stub": {
+    "source": "A lightweight replacement module for the PlayGo runtime library on PlayStation 5",
+    "zh": "适用于 PS5 的轻量级 PlayGo 运行库替代模块。"
+  },
+  "tsuramatsu1/apr-emu-updater": {
+    "source": "PS5 payload that keeps APR Emu up to date on installed titles, from a web interface on the console.",
+    "zh": "通过 PS5 主机上的 Web 界面更新已安装游戏的 APR Emu。"
+  },
+  "gcoding97/ps5-game-compressor": {
+    "source": "Standalone PS5 payload for compressing, unpacking, validating, and repairing ShadowMountPlus-mounted games",
+    "zh": "独立 PS5 Payload，可对 ShadowMountPlus 挂载的游戏进行压缩、解包、校验和修复。"
+  },
+  "exfat2ampr/exfat2ampr": {
+    "source": "Convert PS5 game dumps to AMPR LZ4, right on the console. Made by V-10, LZ4 format by DLPSGAME.",
+    "zh": "直接在 PS5 主机上将游戏转储转换为 AMPR LZ4 格式。"
+  },
+  "theghostonline/ps5-lz4-compression": {
+    "source": "LZ4 compression for games, done entirely on the PS5",
+    "zh": "完全在 PS5 主机上执行游戏的 LZ4 压缩。"
+  },
+  "gameboy829/ps5-lz4-game-compressor": {
+    "source": "LZ4 game compression for PS5 homebrew — beta.1",
+    "zh": "面向 PS5 自制程序的 LZ4 游戏压缩工具（beta.1）。"
+  },
+  "kingdkak/ps5-ffpfsc-pro": {
+    "source": "PS5 FFPFSC PRO - PS5 Game Compression Utility",
+    "zh": "PS5 FFPFSC PRO 游戏压缩实用工具。"
+  },
+  "romanocry/emustore-ps5": {
+    "source": "Store homebrew PS5 à la manette — projet porté par RomainJ. 15 applications, sans mise à jour automatique. Prototype non testé sur console.",
+    "zh": "可使用手柄操作的 PS5 自制软件商店，收录 15 款应用；不支持自动更新，目前为未经主机验证的原型。"
+  },
+  "blackbearreloaded/prosperostore": {
+    "source": "Native PS5 app store for the homebrew catalog at homebrew.page (title PPSA99000)",
+    "zh": "PS5 原生自制软件商店，用于浏览 homebrew.page 上的应用目录。"
+  },
+  "gasb07/ps4mount": {
+    "source": "Allows for PKG games on USB external devices to mount on jailbroken PS5s without installing on internal storage or PS5 formatted USB storage",
+    "zh": "允许已破解 PS5 直接挂载 USB 外置设备上的 PKG 游戏，无需安装到内置存储或 PS5 格式化的 USB 设备。"
+  },
+  "griches/ps5_devilutionx": {
+    "source": "DevilutionX for the PlayStation 5: an installed title with controller, keyboard and mouse (source only)",
+    "zh": "《暗黑破坏神》DevilutionX 的 PS5 移植项目，提供手柄、键盘和鼠标支持（仅源码）。"
+  },
+  "blackbearreloaded/prosperolight": {
+    "source": "An unofficial Moonlight port (game streaming) for PS5",
+    "zh": "PS5 平台的非官方 Moonlight 游戏串流客户端移植版。"
+  },
+  "etahen/etahen": {
+    "source": "AIO HEN payload",
+    "zh": "一体化 HEN（自制程序启用器）Payload。"
+  },
+  "itsplk/ps5-payload-manager": {
+    "source": "A modern, web-based dashboard to easily manage, import, and automatically load payloads on your PS5.",
+    "zh": "现代化 PS5 网页管理面板，可轻松管理、导入和自动加载 Payload。"
+  },
+  "nookieai/kura": {
+    "source": "Scan, identify, organize, and transfer your PS1-PS5 & Vita game library (Windows, macOS, Linux), with a bundled PS5 payload for installs, cheats, saves, and fan control",
+    "zh": "跨平台 PS1–PS5 与 PS Vita 游戏库扫描、识别、整理和传输工具，附带支持安装、金手指、存档及风扇控制的 PS5 Payload。"
+  },
+  "aydencharles/onionhen": {
+    "source": "Yet another HEN enabler for jailbroken PS5",
+    "zh": "适用于已破解 PS5 的另一款 HEN 启用工具。"
+  },
+  "notmaj0r/prosperomgr": {
+    "source": "All-In-One manager for your PS5!",
+    "zh": "适用于 PS5 的一体化管理器。"
+  },
+  "soonniicc/kstuff-a53": {
+    "source": "Integração nativa kstuff-lite + A53/PPR +backport em um único ELF, direto no Código-fonte, do Kstuff créditos e compilação documentados.",
+    "zh": "在单个 ELF 中原生整合 kstuff-lite、A53/PPR 和向后移植支持，附带源码、致谢及编译说明。"
+  },
+  "ps5-linux/ps5-linux-loader": {
+    "source": "Linux payload implementing HV exploits to run a custom bootloader",
+    "zh": "用于 PS5 Linux 启动的 Payload，通过 HV 漏洞利用加载自定义引导程序。"
+  },
+  "ps5-linux/ps5-linux-patches": {
+    "source": "Linux patches and configuration to run on PS5",
+    "zh": "让 Linux 可在 PS5 上运行的补丁和配置。"
+  },
+  "ps5-linux/ps5-linux-image": {
+    "source": "Linux image builder",
+    "zh": "PS5 Linux 系统镜像构建工具。"
+  },
+  "ps5-linux/ps5-linux-tools": {
+    "source": "Linux tools for PS5",
+    "zh": "适用于 PS5 的 Linux 工具集。"
+  },
+  "ps5-linux/ps5-linux-mwifiex": {
+    "source": "Linux mwifiex driver for PS5",
+    "zh": "适用于 PS5 Linux 的 mwifiex 驱动程序。"
+  },
+  "itsblurf/poords4": {
+    "source": "Use a wireless DualShock 4 in native PS5 games on jailbroken consoles.",
+    "zh": "在已破解 PS5 的原生 PS5 游戏中使用无线 DualShock 4 手柄。"
+  },
+  "diegobarbosaa/omnipad-ps5": {
+    "source": "Universal controller engine & Web Dashboard for PlayStation 5 (FW 7.00 - 13.60)",
+    "zh": "适用于 PlayStation 5（固件 7.00–13.60）的通用手柄引擎与 Web 管理面板。"
+  },
+  "fggstore/fgg-xsense": {
+    "source": "Use Xbox controllers on a jailbroken PlayStation 5. Reads GIP gamepads over USB and exposes them as a virtual PlayStation controller.",
+    "zh": "在已破解 PS5 上使用 Xbox 手柄；通过 USB 读取 GIP 手柄并模拟 PlayStation 手柄。"
+  },
+  "sub0x00001/pad2c": {
+    "source": "Use the 8BitDo Ultimate 2C Wireless controller on a jailbroken PS5 as a second DualSense, through its 2.4G USB dongle (no Bluetooth). PS5 payload, tested on firmware 13.60.",
+    "zh": "通过 2.4G USB 接收器将 8BitDo Ultimate 2C 无线手柄用作已破解 PS5 的第二个 DualSense，无需蓝牙，已在 13.60 固件测试。"
+  },
+  "elmonomalvad0/any-pad": {
+    "source": "bluetooth any pad in PS%",
+    "zh": "支持在 PS5 上通过蓝牙使用其他手柄的项目。"
+  },
+  "itsplk/ps5-pkg-manager": {
+    "source": "A clean and intuitive package manager for PS5",
+    "zh": "界面简洁直观的 PS5 PKG 安装包管理器。"
+  },
+  "loopayeh/pkg-sender": {
+    "source": "PKG Sender — install PS4/PS5 packages over LAN. Pick games on PC, auto-find the console, queue and install. No USB, no manual IP.",
+    "zh": "通过局域网向 PS4/PS5 安装 PKG：从电脑选择游戏，自动搜索主机并排队安装，无需 USB 或手动输入 IP。"
+  },
+  "stonedmodder/savemnt-offset-dumper": {
+    "source": "payload for the PlayStation 5 that resolves a set of firmware-specific offsets",
+    "zh": "用于检测 PlayStation 5 各固件专用内存偏移量的 Payload。"
+  },
+  "earthonion/garlic-savemgr": {
+    "source": "A Local Save Manager for your PS5",
+    "zh": "PS5 本地存档管理器。"
+  },
+  "earthonion/garlic-worker": {
+    "source": "Help decrypt, encrypt, and resign PS4/PS5 saves",
+    "zh": "用于解密、加密以及重新签名 PS4/PS5 游戏存档的工具。"
+  },
+  "pharaoh2k/ps5debug-ng": {
+    "source": "PS5 debugger payload — userland TCP wire-protocol server hosted inside SceShellCore. GPL-3.",
+    "zh": "PS5 调试器 Payload，在 SceShellCore 内运行用户态 TCP 协议服务器。"
+  },
+  "illusionyy/ps5-fw-spoof": {
+    "source": "Patch PS4 SDK + PS5 Update version in kernel data to `99.99` without hardcoded offsets.",
+    "zh": "无需硬编码偏移量，将内核数据中的 PS4 SDK 和 PS5 系统更新版本修改为 99.99。"
+  },
+  "idlesauce/ps5-self-pager": {
+    "source": "Yet another PS5 SELF decryptor",
+    "zh": "PS5 SELF 文件解密工具。"
+  },
+  "idlesauce/ps5-self-decrypter": {
+    "source": "A portable payload to decrypt PS5 SELF files from the filesystem to USB drive",
+    "zh": "可移植的 PS5 SELF 解密 Payload，可将文件系统中的 SELF 文件解密至 USB 设备。"
+  },
+  "idlesauce/ps5-remoteplay-get-pin": {
+    "source": "Get Remote Play pairing PIN for offline activated accounts",
+    "zh": "为离线激活的 PS5 账号获取远程游玩配对 PIN 码。"
+  },
+  "seregonwar/memdbg": {
+    "source": "MemDBG is a high-performance memory debugging and inspection suite designed for PlayStation 4 and PlayStation 5 homebrew research environments.",
+    "zh": "面向 PS4 和 PS5 自制程序研究的高性能内存调试与检查工具集。"
+  },
+  "boazvdwansem/ps5-debugger": {
+    "source": "PS5 debugger payload — userland TCP wire-protocol server hosted inside SceShellCore. GPL-3.",
+    "zh": "PS5 调试器 Payload，在 SceShellCore 内运行用户态 TCP 协议服务器。"
+  },
+  "seregonwar/zftpd": {
+    "source": "Zero-copy FTP/HTTP Daemon compatible with all POSIX systems",
+    "zh": "兼容 POSIX 系统的零拷贝 FTP/HTTP 后台服务器。"
+  },
+  "ps5-payload-dev/elfldr": {
+    "source": "An ELF loader for jailbroken PS5s that accepts payloads on port 9021",
+    "zh": "适用于已破解 PS5 的 ELF 加载器，通过 9021 端口接收 Payload。"
+  },
+  "ps5-payload-dev/ftpsrv": {
+    "source": "An FTP server for jailbroken PS4s and PS5s",
+    "zh": "适用于已破解 PS4 和 PS5 的 FTP 服务器。"
+  },
+  "ps5-payload-dev/websrv": {
+    "source": "A web server for jailbroken PS5s that accepts connections on port 8080",
+    "zh": "适用于已破解 PS5 的 Web 服务器，通过 8080 端口接收连接。"
+  },
+  "ps5-payload-dev/gdbsrv": {
+    "source": "A simple GDB server for jailbroken PS4s and PS5s",
+    "zh": "适用于已破解 PS4 和 PS5 的简易 GDB 调试服务器。"
+  },
+  "ps5-payload-dev/klogsrv": {
+    "source": "A socket server for jailbroken PS4s and PS5s that redirects /dev/klog to sockets connected on port 3232",
+    "zh": "适用于已破解 PS4 和 PS5 的日志转发服务器，将 /dev/klog 输出到 3232 端口上的套接字。"
+  },
+  "drakmor/ftpsrv": {
+    "source": "A simple FTP server for jailbroken PS4s and PS5s",
+    "zh": "适用于已破解 PS4 和 PS5 的简易 FTP 服务器。"
+  },
+  "phantomptr/ps5upload": {
+    "source": "Send games, apps and homebrew to a jailbroken PS5, and manage the console from your computer, phone or browser.",
+    "zh": "从电脑、手机或浏览器向已破解 PS5 发送游戏、应用和自制程序，并远程管理主机。"
+  },
+  "barisyild/airpsx": {
+    "source": "Remote management software for Jailbroken PlayStation 4/5",
+    "zh": "用于远程管理已破解 PlayStation 4/5 主机的软件。"
+  },
+  "hgr9519/ps5-wallpaper-modd": {
+    "source": "PS5 payload to change system wallpapers. Supports JPG, PNG, DDS. Backup/Restore, web interface.",
+    "zh": "用于更改 PS5 系统壁纸的 Payload，支持 JPG、PNG、DDS、备份恢复和 Web 界面。"
+  },
+  "stonedmodder/chronicloader-ps5-payload": {
+    "source": "Payload Updater & autoload.txt manager",
+    "zh": "Payload 更新器与 autoload.txt 管理工具。"
+  },
+  "stonedmodder/ps-game-state-lib": {
+    "source": "Standalone PS5 game-state detection payload, C library, and desktop GUI",
+    "zh": "独立的 PS5 游戏运行状态检测 Payload，同时提供 C 语言库和桌面图形界面。"
+  },
+  "bizkut/unrar-ps5": {
+    "source": "PS5 UnRAR payload for extracting homebrew archives",
+    "zh": "用于解压 PS5 自制程序归档文件的 UnRAR Payload。"
+  },
+  "masterps0/ps5-power-payloads-project": {
+    "source": "PS5 Power Payloads Project",
+    "zh": "PS5 Power Payloads 项目。"
+  },
+  "kerrdec97/ps5-date-time-sync": {
+    "source": "Standalone PS5 payload that automatically restores the system date and time using public NTP servers.",
+    "zh": "独立 PS5 Payload，通过公共 NTP 服务器自动恢复主机系统日期与时间。"
+  },
+  "fggstore/fgg-unpack": {
+    "source": "Extract .zip and .7z archives directly on a jailbroken PlayStation 5. Drop an archive in a watched folder and it unpacks in place — upload 30 GB instead of 150.",
+    "zh": "直接在已破解 PS5 上解压 ZIP 和 7Z 压缩包；监视指定目录并原地解压，减少传输的数据量。"
+  },
+  "itsblurf/bfplayer": {
+    "source": "A PS5 media and video player that also functions as a complete media library, with support for subtitles, multiple audio tracks, aspect-ratio adjustment, cropping, and many other playback settings.",
+    "zh": "PS5 媒体和视频播放器，兼具完整媒体库功能，支持字幕、多音轨、画面比例、裁剪及其他播放选项。"
+  },
+  "kingdkak/prosperoplayer": {
+    "source": "ProsperoPlayer 1.0 — jailbroken PS5 media player. Media home tile, HEVC/H.264, USB, subs, music.",
+    "zh": "适用于已破解 PS5 的 ProsperoPlayer 1.0 媒体播放器，支持主屏幕媒体磁贴、HEVC/H.264、USB、字幕和音乐。"
+  },
+  "ps5-payload-dev/svtplay": {
+    "source": "An unofficial 10-foot webapp UI for svtplay.se",
+    "zh": "面向 svtplay.se 的非官方电视端 Web 应用界面。"
+  },
+  "theghostonline/nuvio-ps5": {
+    "source": "Nuvio for PlayStation 5 - the Nuvio TV interface as a PS5 app with a native 4K HDR player",
+    "zh": "PS5 版 Nuvio TV 客户端，提供原生 4K HDR 播放器。"
+  },
+  "bornaradusin/emby5": {
+    "source": "Native Emby client for PlayStation 5",
+    "zh": "PlayStation 5 原生 Emby 客户端。"
+  },
+  "02dnot/jelly5": {
+    "source": "A native Jellyfin and Emby client for jailbroken PS5: its own liquid-glass interface, hardware-decoded 4K HDR",
+    "zh": "适用于已破解 PS5 的原生 Jellyfin/Emby 客户端，采用玻璃质感界面并支持硬件解码 4K HDR。"
+  },
+  "mortaljinx/mortalfin": {
+    "source": "Native Jellyfin client for jailbroken PS5 consoles",
+    "zh": "适用于已破解 PS5 的原生 Jellyfin 客户端。"
+  },
+  "handshakehackin/nuvio-maxd-releases": {
+    "source": "Nuvio Max'd brings Nuvio to PS5 with synced watch progress, addon streams, episode skipping and experimental HDR10 playback. An unofficial native app, with public downloads and matching source.",
+    "zh": "将 Nuvio 带到 PS5，支持观看进度同步、插件串流、跳过剧集片段和实验性 HDR10 播放，提供公开下载及源码。"
+  },
+  "bilawalriaz/nuvio-ps5-homebrew": {
+    "source": "Experimental Nuvio TV port with EVO native playback for jailbroken PS5 firmware 13.60. Source alpha.",
+    "zh": "适用于已破解 PS5（13.60 固件）的实验性 Nuvio TV 移植版，使用 EVO 原生播放器，源码尚处 Alpha 阶段。"
+  },
+  "marice/oliseplayer": {
+    "source": "OliSe Player: a FastTracker II flavoured tracker-music radio for jailbroken PS5s, streaming MOD/XM/S3M/IT from The Mod Archive",
+    "zh": "适用于已破解 PS5 的 OliSe Player 跟踪音乐电台，可从 The Mod Archive 串流播放 MOD/XM/S3M/IT 音乐。"
+  },
+  "portablelle/opennow-ps5": {
+    "source": "Experimental native PS5 GeForce NOW client: a working, console-tested prototype with hardware decoding and GPU presentation.",
+    "zh": "实验性的 PS5 原生 GeForce NOW 客户端原型，已在实机测试，支持硬件解码与 GPU 画面输出。"
+  },
+  "svengdk/prospero-vibrate": {
+    "source": "A frame-driven studio for the PS4 & PS5 controller's vibration motors.",
+    "zh": "用于 PS4 和 PS5 手柄振动马达的逐帧控制工作室。"
+  },
+  "blackbearreloaded/prosperoradio": {
+    "source": "A radio player for PS5, possible thanks to RadioBrowser database",
+    "zh": "适用于 PS5 的网络电台播放器，基于 RadioBrowser 数据库。"
+  },
+  "blackbearreloaded/prosperotv": {
+    "source": "Native IPTV client for PlayStation 5 homebrew with an offline-first iptv-org catalog and hardware-accelerated H.264, HEVC, and VP9 playback.",
+    "zh": "PS5 原生 IPTV 播放器，内置离线优先的 iptv-org 频道目录，支持硬件加速播放 H.264、HEVC 和 VP9。"
+  },
+  "stonedmodder/pshare": {
+    "source": "Native PS5 homebrew app that sends media gallery items to Discord, Telegram, catbox.moe, a USB drive, a shared folder on your PC or a dozen other places, automatically",
+    "zh": "PS5 原生媒体分享工具，可自动将相册中的截图和视频发送到 Discord、Telegram、catbox.moe、USB、电脑共享目录等多种位置。"
+  },
+  "sp9nky/unofficial-stremio-ps5-port": {
+    "source": "Unofficial Stremio client for the PS5",
+    "zh": "适用于 PS5 的非官方 Stremio 客户端。"
+  },
+  "lozazamastro/stremio-plus": {
+    "source": "A PS5 Stremio homebrew app with a powerful torrent engine",
+    "zh": "适用于 PS5 的 Stremio 自制程序，内置功能强大的 BT 种子引擎。"
+  },
+  "tsvetomirgt/symphonystation5": {
+    "source": "A PS5 Homebrew Navidrome Client",
+    "zh": "适用于 PS5 的 Navidrome 音乐客户端。"
+  },
+  "zizc3/vlc": {
+    "source": "VLC for PS5.",
+    "zh": "适用于 PS5 的 VLC 媒体播放器。"
+  },
+  "khalifa007/capymobile": {
+    "source": "Java phone games (J2ME) on the PS5: a native homebrew emulator app",
+    "zh": "适用于 PS5 的原生 J2ME 模拟器，可运行 Java 功能手机游戏。"
+  },
+  "blackbearreloaded/ps5-homebrew-ui": {
+    "source": "Reference for building polished, console-grade PS5 homebrew interfaces with OpenGL",
+    "zh": "使用 OpenGL 开发高品质 PS5 原生自制程序界面的参考项目。"
+  },
+  "blackbearreloaded/prosperoai": {
+    "source": "A simple LLM-based chat app that runs on the PS5 GPU",
+    "zh": "可在 PS5 GPU 上运行的简易大语言模型聊天应用。"
+  },
+  "blackbearreloaded/ps5-fsr4": {
+    "source": "A proof of concept of FSR4 running on PS5 GPU",
+    "zh": "在 PS5 GPU 上运行 FSR4 的概念验证项目。"
+  },
+  "blackbearreloaded/ps5-opengl": {
+    "source": "Experimental OpenGL 4.6 Core and GLSL 4.60 port for PS5 homebrew, powered by Mesa/Gallium, with native EGL support, an SDK, and examples.",
+    "zh": "面向 PS5 自制软件的实验性 OpenGL 4.6 / GLSL 4.60 移植版，基于 Mesa/Gallium，支持原生 EGL、SDK 和示例。"
+  },
+  "theghostonline/ps5vr": {
+    "source": "Native VR video player for PS VR2 on jailbroken PS5: 8K, 180/360, 3D, spatial audio",
+    "zh": "适用于已破解 PS5 与 PS VR2 的原生 VR 视频播放器，支持 8K、180°/360°、3D 视频及空间音频。"
+  },
+  "zizc3/ruffle-flash-ps5": {
+    "source": "PS5 Flash Emulator.",
+    "zh": "适用于 PS5 的 Flash 模拟器。"
+  },
+  "felipemelchior/driftcheck5": {
+    "source": "Controller tester for jailbroken PS5",
+    "zh": "适用于已破解 PS5 的手柄测试工具。"
+  },
+  "svengdk/prospero-explorer": {
+    "source": "A file explorer homebrew application for the PS5 console, written in C# on top of the SharpProspero SDK.",
+    "zh": "基于 SharpProspero SDK、使用 C# 开发的 PS5 文件资源管理器。"
+  },
+  "svengdk/prospero-multi-tools": {
+    "source": "PS5 Homebrew Backup Manager & Toolkit for PS1, PS2, PS3, PS4, PS5, PSP and PS Vita backups.",
+    "zh": "PS5 自制程序备份管理器与工具箱，支持 PS1、PS2、PS3、PS4、PS5、PSP 和 PS Vita 备份。"
+  },
+  "kasobos67/switchps5": {
+    "source": "ProsperoEden with the full Switch UI",
+    "zh": "带有完整 Switch 用户界面的 ProsperoEden。"
+  },
+  "notmaj0r/cheatrunner_patches": {
+    "source": "A community collection of PS4 & PS5 game patches made for CheatRunner.",
+    "zh": "由社区维护的 PS4/PS5 CheatRunner 游戏补丁合集。"
+  },
+  "x-f1reball-x/elf-launcher": {
+    "source": "Home screen and browser ELF payload launcher for a jailbroken PS5.",
+    "zh": "适用于已破解 PS5 的主屏幕及浏览器 ELF Payload 启动器。"
+  },
+  "x-f1reball-x/hearbridge-ps5": {
+    "source": "Play PS5 game audio on any Bluetooth headphones or earbuds. Payload for jailbroken PS5",
+    "zh": "将 PS5 游戏音频传输到任意蓝牙耳机的 Payload，适用于已破解主机。"
+  },
+  "x-f1reball-x/wk-autoloader": {
+    "source": "Home screen jailbreak host for the PS5. Runs the exploit chain, then opens Elf Launcher.",
+    "zh": "PS5 主屏幕越狱入口，可运行漏洞利用链并随后启动 ELF Launcher。"
+  },
+  "x-f1reball-x/hearbridge-browser": {
+    "source": "Stream PS5 console audio to any browser on your local network",
+    "zh": "将 PS5 主机音频串流至局域网内的任意网页浏览器。"
+  },
+  "blaze414/ps5-theme": {
+    "source": "Custom home-screen themes for jailbroken PS5 consoles (etaHEN plugin): backgrounds, icons, sounds, fonts and home music as read-only overlays.",
+    "zh": "适用于已破解 PS5 的自定义主屏幕主题（etaHEN 插件），可通过只读覆盖层修改背景、图标、音效、字体和主界面音乐。"
+  },
+  "not-efootballer/nx-controller-tester": {
+    "source": "Nintendo Switch homebrew (.nro) to test your controllers: Joy-Con, DualShock 3 (PS3), DualShock 4 (PS4), DualSense (PS5) and PS1/PS2 controllers via the SuperBox 3 USB adapter. Buttons, sticks, drift, triggers, battery, rumble.",
+    "zh": "Nintendo Switch 自制版手柄测试工具（NRO），支持 Joy-Con、DualShock 3/4、DualSense 及通过 SuperBox 3 USB 转接的 PS1/PS2 手柄，可测试按键、摇杆漂移、扳机、电量和震动。"
+  },
+  "the7mirrors/ps5-captures": {
+    "source": "PS5 homebrew app: send your screenshots and videos to your phone over Wi-Fi with a QR code. No account, no cloud.",
+    "zh": "通过 Wi-Fi 和二维码将 PS5 截图及视频发送到手机，无需账号或云服务。"
+  },
+  "the7mirrors/msx-ps5": {
+    "source": "MSX emulator for the PS5 with a 3D game shelf (blueMSX)",
+    "zh": "适用于 PS5 的 MSX 模拟器，基于 blueMSX，提供 3D 游戏展示架。"
+  },
+  "bps2414/visor-ps5": {
+    "source": "Mirror a Meta Quest 2 to the TV from a jailbroken PS5 - no PC, nothing to install on the headset",
+    "zh": "将 Meta Quest 2 的画面通过已破解 PS5 投屏到电视，无需电脑，也无需在头显上安装软件。"
+  },
+  "bucanero/save-decrypters": {
+    "source": "Tools to decrypt specific PlayStation save-games (GTA5, TLOU, Uncharted 2, Uncharted 3, DmC, Diablo 3, Resident Evil, NFS, +++)",
+    "zh": "用于解密部分 PlayStation 游戏存档的工具集，支持 GTA5、最后生还者、神秘海域、暗黑破坏神 3、生化危机等。"
+  },
+  "cherfia/raiju": {
+    "source": "Download straight to your jailbroken PS5's internal NVMe",
+    "zh": "直接将文件下载到已破解 PS5 的内部 NVMe 存储。"
+  },
+  "quer3q/ps5-dump-forge": {
+    "source": "A toolkit for working with PS5 game dumps. Cross-platform - including the PS5 itself.",
+    "zh": "处理 PS5 游戏转储的跨平台工具箱，也可以直接在 PS5 上运行。"
+  },
+  "loopayeh/pkg-viewer": {
+    "source": "PKG Viewer by Loopayeh: view PS3/PS4/PS5 package info and cover art",
+    "zh": "用于查看 PS3/PS4/PS5 PKG 安装包信息与封面图片的工具。"
+  },
+  "sweenyxsky-oss/ps5-library-browser": {
+    "source": "Native PS5 Game Library Browser & Launcher with NFS support, ShadowMountPlus daemon lock, and Itemzflow-inspired UI",
+    "zh": "PS5 原生游戏库浏览器与启动器，支持 NFS、ShadowMountPlus 守护进程锁定，并采用受 Itemzflow 启发的界面。"
+  },
+  "arwebse/librepadps5": {
+    "source": "Use your gamepad on PS5. Configurable USB and opt-in Bluetooth controllers with a LAN dashboard.",
+    "zh": "PS5 手柄兼容工具，支持可配置的 USB 手柄、可选蓝牙手柄及局域网管理面板。"
+  },
+  "ps5-payload-dev/sdk": {
+    "source": "An SDK for PS5 payloads that uses dynamic linking",
+    "zh": "支持动态链接的 PS5 Payload 开发 SDK。"
+  },
+  "gronedwaffel/tachen": {
+    "source": "TacHen beta: native PS5 menu and phone/PC web UI. Compatibility preview covers 67 exact profiles from 1.00–13.60; added firmware is untested. Original Beta 1 retained.",
+    "zh": "TacHen 测试版：提供 PS5 原生菜单与手机/电脑 Web 界面；兼容性预览列出 1.00–13.60 的 67 个特定固件配置，新增固件未经测试。"
+  },
+  "brgz3/ps5-log-collector": {
+    "source": "Portable Windows app for streaming, timestamping, and saving KLOG from jailbroken PS5 consoles over TCP — no  Netcat or extra runtime required.",
+    "zh": "Windows 便携程序，用于通过 TCP 实时接收、添加时间戳并保存已破解 PS5 的 KLOG 日志，无需 Netcat 或其他运行环境。"
+  },
+  "unicxrn/prospack": {
+    "source": "Pack, verify and send PS5 dumps as .ffpfsc, from your PC",
+    "zh": "在电脑上将 PS5 游戏转储打包为 .ffpfsc，并进行校验和发送。"
+  },
+  "b4ckd0orl/padrino-save-vault": {
+    "source": "👑 Padrino Save Vault — Universal PS5 Savegame Backup & Restoration Payload (Firmwares 3.00 - 13.60)",
+    "zh": "通用 PS5 游戏存档备份与恢复 Payload，支持固件 3.00–13.60。"
+  },
+  "masterps0/ps5themes": {
+    "source": "PS5Themes 2.00 -10.01",
+    "zh": "PS5Themes 主题工具（版本 2.00–10.01）。"
+  },
+  "masterps0/ps5download0tool": {
+    "source": "==== PS5 download0.dat TOOL ====",
+    "zh": "PS5 download0.dat 文件处理工具。"
+  },
+  "masterps0/pdbreadergui": {
+    "source": "PdbReaderGUI",
+    "zh": "PdbReaderGUI 图形界面工具。"
+  },
+  "masterps0/ps5_yt_blocker": {
+    "source": "PS5 YT_Update_Blocker",
+    "zh": "PS5 YouTube 更新屏蔽工具。"
+  },
+  "teekay87/hen-cheats-collection": {
+    "source": "The most complete cheats collection for the PS4 and PS5 with interactive cheats index",
+    "zh": "PS4/PS5 金手指合集，提供交互式金手指索引。"
+  },
+  "owendswang/ps5-webkit-autoloader-esp32": {
+    "source": "ESP32 firmware: An automated payload loader for exploited PS5 consoles",
+    "zh": "运行于 ESP32 的 PS5 Payload 自动加载器固件。"
+  },
+  "owendswang/ps5-aria2": {
+    "source": "aria2 for PS5",
+    "zh": "适用于 PS5 的 aria2 下载工具。"
+  },
+  "seregonwar/pkgtoolbox": {
+    "source": "Toolbox for analyzing and editing pkg application files for psp,ps3, ps4 and ps5, includes the most useful functions you might need.",
+    "zh": "用于分析及编辑 PSP、PS3、PS4 和 PS5 PKG 安装包的工具箱，包含多项常用功能。"
+  },
+  "seregonwar/psxterm": {
+    "source": "Remote interactive terminal environment for exploited PlayStation 4 and PlayStation 5 systems.",
+    "zh": "适用于已破解 PS4 与 PS5 的远程交互式终端环境。"
+  },
+  "yahballon/ps5clean": {
+    "source": "This tool helps you ",
+    "zh": "PS5CLEAN 工具；原项目简介信息不完整。"
+  },
+  "dnullptr/atmoxjb": {
+    "source": "PS5 magic that if ykyk",
+    "zh": "PS5 AtmoxJB 项目，原作者未说明具体功能。"
+  },
+  "sloppystakes/prospero-sender": {
+    "source": "An app meant to make it easy to send homebrew apps to the ps5.",
+    "zh": "便于向 PS5 发送自制程序的应用。"
+  },
+  "pedro9261/ps5-notify-app": {
+    "source": "Enviar notificaciones de la app movil hacia la ps5",
+    "zh": "从手机应用向 PS5 发送通知。"
+  },
+  "larazadelsol/wings-app": {
+    "source": "A PS5 Frontend Solution for Creating Seamless & Frustration Free On-Device Experiences",
+    "zh": "用于在 PS5 主机端构建流畅、易用体验的前端解决方案。"
+  },
+  "yahballon/ps5gbcx": {
+    "source": "A native GB/GBC emulator for jailbroken PS5",
+    "zh": "适用于已破解 PS5 的原生 GB/GBC 模拟器。"
+  },
+  "yahballon/ps5gbax": {
+    "source": "A native GBA emulator for jailbroken PS5",
+    "zh": "适用于已破解 PS5 的原生 GBA 模拟器。"
+  },
+  "yahballon/ps5snesx": {
+    "source": "A native SNES emulator for jailbroken PS5 ",
+    "zh": "适用于已破解 PS5 的原生 SNES 模拟器。"
+  },
+  "yahballon/ps5n64x": {
+    "source": "A native N64 emulator for jailbroken PS5",
+    "zh": "适用于已破解 PS5 的原生 N64 模拟器。"
+  },
+  "yahballon/ps5nesx": {
+    "source": "A native NES emulator for jailbroken PS5",
+    "zh": "适用于已破解 PS5 的原生 NES 模拟器。"
+  },
+  "griches/ps5_ghostship": {
+    "source": "Super Mario 64 for PlayStation 5 homebrew: Ghostship (libultraship) on the PS5 Vulkan stack. No game data included.",
+    "zh": "面向 PS5 自制程序的《超级马力欧 64》移植版，基于 Ghostship（libultraship）和 PS5 Vulkan，不包含游戏数据。"
+  },
+  "griches/ps5_switchwaker": {
+    "source": "The Wind Waker (GameCube) for PlayStation 5 homebrew: SwitchWaker on the PS5 Vulkan stack. No game data included.",
+    "zh": "面向 PS5 自制程序的《塞尔达传说：风之杖》GameCube 版移植项目，基于 SwitchWaker 和 PS5 Vulkan，不包含游戏数据。"
+  },
+  "vivalavent/ps5mc": {
+    "source": "PS5MC is a PS5 port of Kodi, the award-winning free and open source home theater/media center software and entertainment hub for digital media. With its beautiful interface and powerful skinning engine.",
+    "zh": "PS5 版 Kodi 移植项目，Kodi 是免费开源的家庭影院、媒体中心及数字娱乐中心软件，提供丰富界面与皮肤扩展。"
+  },
+  "rodri0x/ps5-acestream": {
+    "source": "Experimental native Ace Stream player for jailbroken PS5: the engine runs on the console, with hardware H.264 decoding and a phone page to send channels.",
+    "zh": "适用于已破解 PS5 的实验性原生 Ace Stream 播放器，引擎在主机上运行，支持 H.264 硬件解码和通过手机网页发送频道。"
+  }
+}
