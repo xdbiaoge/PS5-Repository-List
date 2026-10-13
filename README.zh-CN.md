@@ -21,12 +21,16 @@
 ├── .github/workflows/deploy.yml   # 定时更新仓库数据库
 ├── json/
 │   ├── repos-config.json          # 仓库列表、分类和显示颜色配置
-│   └── repos-database.json        # 自动生成的仓库元数据
-├── scripts/update-db.js           # GitHub API 数据同步脚本
+│   ├── repos-database.json        # 自动生成的仓库元数据
+│   └── translations.zh-CN.json   # 中文简介词库
+├── scripts/
+│   ├── update-db.js              # GitHub API 数据同步
+│   └── check-translations.js      # 检查待翻译简介
 ├── tool/config_manager.py         # Python Tkinter 图形配置管理器
 ├── index.html                     # 网页主页
 ├── test.html                      # 测试页面
-├── README.md                      # 法语说明
+├── README.md                      # 中文首页说明
+├── README.fr.md                   # 原法语说明
 └── README.zh-CN.md                # 本文档
 ```
 
@@ -46,7 +50,7 @@
 
 - 在 `json/repos-config.json` 中维护仓库 URL、所属分类及颜色。
 - `scripts/update-db.js` 调用 GitHub API 获取星标、最近提交、最新发布等信息，并写入 `json/repos-database.json`。
-- `.github/workflows/deploy.yml` 设置了每小时执行一次的更新任务；Fork 后请到 **Actions** 确认该工作流是否已启用。
+- `.github/workflows/deploy.yml` 每小时同步数据，并在 Actions Summary 中显示新增仓库简介和过期翻译清单（仅提示，不阻断自动更新，也不会自动覆盖中文翻译）。Fork 后请到 **Actions** 确认该工作流是否已启用。
 
 ### Python 图形配置管理器
 
@@ -62,7 +66,7 @@ python tool/config_manager.py
 
 ## 🔧 开发说明
 
-页面优先读取 `json/repos-database.json` 的实时数据；若无法加载，则使用 HTML 中内置的备用数据快照。仓库说明、下载链接和历史提交信息来自项目原始数据，不随界面语言切换改变。
+页面优先读取 `json/repos-database.json` 的实时数据；若无法加载，则使用 HTML 中内置的备用数据快照。浏览器标题和页面说明随语言切换同步更新。仓库说明、下载链接和历史提交信息来自项目原始数据，不随界面语言切换改变。
 
 ## 🤝 参与贡献
 

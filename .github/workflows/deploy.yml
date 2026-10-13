@@ -1,9 +1,9 @@
-name: Mettre à jour la base de données des dépôts
+name: 自动更新 PS5 仓库数据库
 
 on:
   schedule:
-    - cron: '0 * * * *' # S'exécute à chaque heure pile (minute 0)
-  workflow_dispatch: # Permet de lancer la mise à jour manuellement depuis l'onglet Actions de GitHub
+    - cron: '0 * * * *' # 每小时整点自动运行
+  workflow_dispatch: # 也可在 GitHub Actions 页面手动触发
 
 permissions:
   contents: write
@@ -12,24 +12,25 @@ jobs:
   update-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: 1. Cloner le dépôt
+      - name: 1. 检出仓库
         uses: actions/checkout@v4
 
-      - name: 2. Configurer Node.js
+      - name: 2. 配置 Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
 
-      - name: 3. Exécuter le script de mise à jour du JSON
+      - name: 3. 更新仓库数据并检查中文翻译覆盖率
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           node scripts/update-db.js
+          node scripts/check-translations.js
 
-      - name: 4. Sauvegarder et commiter les modifications si le JSON a changé
+      - name: 4. 仅在仓库数据库发生变化时提交
         run: |
           git config --global user.name "GitHub Actions Bot"
           git config --global user.email "actions@github.com"
           git add json/repos-database.json
-          # Vérifie s'il y a des changements, si oui commit et push, sinon ne fait rien
-          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: mise à jour automatique des stats des repos [skip ci]" && git push)
+          # 仅检测数据变更，有修改时才提交并推送
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: 自动更新 PS5 仓库统计数据 [skip ci]" && git push)

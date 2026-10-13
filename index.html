@@ -499,7 +499,7 @@
   </div>
 
   <script>
-    const { createApp, ref, computed, onMounted } = Vue;
+    const { createApp, ref, computed, onMounted, watch } = Vue;
 
     createApp({
       setup() {
@@ -518,6 +518,8 @@
         const i18n = {
           "zh-CN": {
             "siteTagline": "PS5 项目导航与版本追踪",
+            "pageTitle": "PS5 Repository List - PS5 仓库与版本追踪",
+            "pageDescription": "集中收录与追踪 PS5 自制程序、工具和模拟器，查看最新提交、发布版本及下载文件。",
             "searchPlaceholder": "搜索仓库、作者、标签或技术…",
             "whatsNew": "最近更新",
             "tilesView": "卡片视图",
@@ -572,6 +574,8 @@
           },
           "fr": {
             "siteTagline": "Hub & Release Tracker",
+            "pageTitle": "PS5 Repository List - Dépôts PS5 et versions",
+            "pageDescription": "Explorez les dépôts PS5, les homebrews et les émulateurs, ainsi que les commits, versions et téléchargements.",
             "searchPlaceholder": "Rechercher (dépôt, auteur, tag, techno)...",
             "whatsNew": "What's New",
             "tilesView": "Vue Tuiles",
@@ -626,6 +630,8 @@
           },
           "en": {
             "siteTagline": "Hub & Release Tracker",
+            "pageTitle": "PS5 Repository List - PS5 Repositories & Releases",
+            "pageDescription": "Explore PS5 homebrew projects, emulators and tools, with recent commits, releases and downloads.",
             "searchPlaceholder": "Search (repository, author, tag, tech)...",
             "whatsNew": "What's New",
             "tilesView": "Tile View",
@@ -680,10 +686,16 @@
           }
         };
         const t = (key) => i18n[currentLang.value]?.[key] || i18n['zh-CN'][key] || key;
+        // Keep browser tab metadata in sync with the selected UI language.
+        watch(currentLang, (language) => {
+          document.documentElement.lang = language;
+          document.title = t('pageTitle');
+          const tag = document.querySelector('meta[name="description"]');
+          if (tag) tag.setAttribute('content', t('pageDescription'));
+        }, { immediate: true });
         const localeOrder = ['zh-CN', 'en', 'fr'];
         const toggleLang = () => {
           currentLang.value = localeOrder[(localeOrder.indexOf(currentLang.value) + 1) % localeOrder.length];
-          document.documentElement.lang = currentLang.value;
           try { localStorage.setItem('ps5-repository-list-language', currentLang.value); } catch (e) {}
         };
         const localizedCatName = (cat) => {
@@ -745,7 +757,6 @@
             const savedLang = localStorage.getItem('ps5-repository-list-language');
             if (localeOrder.includes(savedLang)) currentLang.value = savedLang;
           } catch (e) {}
-          document.documentElement.lang = currentLang.value;
           // Translation lookup loads independently so a failed request never blocks repository data.
           fetch('./json/translations.zh-CN.json', { cache: 'no-cache' })
             .then(res => res.ok ? res.json() : {})
