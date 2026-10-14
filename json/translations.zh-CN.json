@@ -104,8 +104,8 @@
     "zh": "PS5 平台的 Dusklight 自制程序移植版，基于 RADV、Aurora、Dawn WebGPU 和 SDL3，需要自备光盘镜像。"
   },
   "premohq/ps5cemu-har": {
-    "source": "Wii U and 3DS emulation for PS5 homebrew (Cemu + Azahar)",
-    "zh": "面向 PS5 自制程序的 Wii U 与 3DS 模拟方案，结合 Cemu 和 Azahar。"
+    "source": "Wii U, 3DS, and DS emulation for PS5 homebrew (Cemu + Azahar+ Melon DS)",
+    "zh": "面向 PS5 自制程序的 Wii U、3DS 和 DS 模拟方案，结合 Cemu、Azahar 和 Melon DS。"
   },
   "swordpdf/ps5sx2": {
     "source": "A port of PCSX2 for PS5",
@@ -580,8 +580,8 @@
     "zh": "将 PS5 主机音频串流至局域网内的任意网页浏览器。"
   },
   "blaze414/ps5-theme": {
-    "source": "Custom home-screen themes for jailbroken PS5 consoles (etaHEN plugin): backgrounds, icons, sounds, fonts and home music as read-only overlays.",
-    "zh": "适用于已破解 PS5 的自定义主屏幕主题（etaHEN 插件），可通过只读覆盖层修改背景、图标、音效、字体和主界面音乐。"
+    "source": "Custom home-screen themes for jailbroken PS5 consoles (etaHEN plugin or standalone payload): backgrounds, icons, sounds, fonts and home music as read-only overlays.",
+    "zh": "适用于已破解 PS5 的自定义主屏幕主题（etaHEN 插件或独立载荷），可通过只读覆盖层修改背景、图标、音效、字体和主界面音乐。"
   },
   "not-efootballer/nx-controller-tester": {
     "source": "Nintendo Switch homebrew (.nro) to test your controllers: Joy-Con, DualShock 3 (PS3), DualShock 4 (PS4), DualSense (PS5) and PS1/PS2 controllers via the SuperBox 3 USB adapter. Buttons, sticks, drift, triggers, battery, rumble.",
@@ -696,8 +696,8 @@
     "zh": "从手机应用向 PS5 发送通知。"
   },
   "larazadelsol/wings-app": {
-    "source": "A PS5 Frontend Solution for Creating Seamless & Frustration Free On-Device Experiences",
-    "zh": "用于在 PS5 主机端构建流畅、易用体验的前端解决方案。"
+    "source": "A PS5 Frontend Solution for a Seamless & Frustration Free On-Device Experiences",
+    "zh": "为 PS5 主机端提供流畅、易用体验的前端解决方案。"
   },
   "yahballon/ps5gbcx": {
     "source": "A native GB/GBC emulator for jailbroken PS5",
