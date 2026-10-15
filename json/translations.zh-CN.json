@@ -324,7 +324,7 @@
     "zh": "通过 2.4G USB 接收器将 8BitDo Ultimate 2C 无线手柄用作已破解 PS5 的第二个 DualSense，无需蓝牙，已在 13.60 固件测试。"
   },
   "elmonomalvad0/any-pad": {
-    "source": "bluetooth any pad in PS%",
+    "source": "bluetooth any pad in PS5",
     "zh": "支持在 PS5 上通过蓝牙使用其他手柄的项目。"
   },
   "itsplk/ps5-pkg-manager": {
