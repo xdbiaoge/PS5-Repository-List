@@ -734,5 +734,9 @@
   "rodri0x/ps5-acestream": {
     "source": "Experimental native Ace Stream player for jailbroken PS5: the engine runs on the console, with hardware H.264 decoding and a phone page to send channels.",
     "zh": "适用于已破解 PS5 的实验性原生 Ace Stream 播放器，引擎在主机上运行，支持 H.264 硬件解码和通过手机网页发送频道。"
+  },
+  "smoxa/ps5-new-overlay": {
+    "source": "Standalone in-game telemetry overlay for PlayStation 5 (Jailbreak) with real-time hardware monitoring, built-in Web configuration panel, and 12 live metrics",
+    "zh": "适用于已破解 PS5 的独立游戏内性能监控叠加层，支持实时硬件监测、内置网页配置面板，并显示 12 项实时指标。"
   }
 }

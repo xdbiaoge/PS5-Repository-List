@@ -64,3 +64,7 @@ python tool/config_manager.py
 ### 2026-10-16 上游数据同步
 
 已同步原作者 `nexgen999/PS5-Repository-List` 至提交 [`31bbab3`](https://github.com/nexgen999/PS5-Repository-List/commit/31bbab3d69796b69c554445c0f498b127fad9631)（自上次 `35f06ba` 起的 7 次自动仓库数据更新）。同步后的数据库更新至 2026-10-15 12:19:49 UTC，仍收录 210 个仓库。本次没有上游前端与分类变更；保留本项目现有的简体中文 UI、中文简介适配、独立词库、网站入口及 GitHub Pages 配置。同时修正 `elmonomalvad0/any-pad` 英文简介由 `PS%` 至 `PS5` 的对应原文，现有中文译文无需改变。所有有英文简介的项目均已有对应简体中文译文，且与当前数据库匹配。
+
+### 2026-10-17 上游数据同步
+
+已合并上游 `nexgen999/PS5-Repository-List` 至提交 [`074b563`](https://github.com/nexgen999/PS5-Repository-List/commit/074b5632dbee50a0522dbb08916dfaddf39eb945)，包含自上次 `31bbab3` 后新增的 10 次自动数据更新。最新仓库数据库生成于 2026-10-17 02:03:31 UTC，收录仓库仍为 210 个，上游前端、分类与功能代码均无变化。补充 `smoxa/ps5-new-overlay` 的中文简介，现在所有带英文简介的仓库都具有匹配的中文翻译。保留默认简体中文、中文分类、独立翻译词库、前端适配、中文配置工具和 GitHub Pages 设置。
