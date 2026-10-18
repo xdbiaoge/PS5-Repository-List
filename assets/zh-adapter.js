@@ -25,7 +25,9 @@ const CATEGORY_NAMES = {
   "cat-ps5_themes-avatars": "PS5 主题与头像",
   "cat-ps5_utility": "PS5 综合工具",
   "cat-ps5_video_player": "PS5 视频与媒体播放",
-  "cat-ps5_cloud_gaming": "PS5 云游戏"
+  "cat-ps5_cloud_gaming": "PS5 云游戏",
+  "cat-pc-ps5-dev": "PC 端 PS5 开发工具",
+  "cat-pc_apps": "PC 应用工具"
 };
 let translationsPromise;
 function getDescriptions() {

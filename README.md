@@ -68,3 +68,7 @@ python tool/config_manager.py
 ### 2026-10-17 上游数据同步
 
 已合并上游 `nexgen999/PS5-Repository-List` 至提交 [`074b563`](https://github.com/nexgen999/PS5-Repository-List/commit/074b5632dbee50a0522dbb08916dfaddf39eb945)，包含自上次 `31bbab3` 后新增的 10 次自动数据更新。最新仓库数据库生成于 2026-10-17 02:03:31 UTC，收录仓库仍为 210 个，上游前端、分类与功能代码均无变化。补充 `smoxa/ps5-new-overlay` 的中文简介，现在所有带英文简介的仓库都具有匹配的中文翻译。保留默认简体中文、中文分类、独立翻译词库、前端适配、中文配置工具和 GitHub Pages 设置。
+
+### 2026-10-18 上游同步
+
+已合并原作者仓库至提交 [`59a2ba6`](https://github.com/nexgen999/PS5-Repository-List/commit/59a2ba645575882efebcb92e453a0c1c64be9137)，包含自上次 `074b563` 后的 21 次提交。上游数据库更新至 2026-10-18 07:05:32 UTC：收录记录从 210 增至 269（新增 69 条、移除 8 条），分类从 23 增至 25。同步最新 `json/repos-config.json`、`json/repos-database.json`，以及新增的待收录清单 `Repository-to-add/next_add.md` 和原作者配置工具 `tool/config_manager_v0.2.py`（该新增工具保留上游原文，原来的 `tool/config_manager.py` 继续支持简体中文）。补齐新增项目的中文简介，新增两种分类的网页与中文配置工具显示映射。保留中文版首页、React 汉化脚本、多语言 UI 词库、GitHub Pages 配置与中文文档。

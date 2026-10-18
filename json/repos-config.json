@@ -137,6 +137,18 @@
       "name": "ps5_cloud_gaming",
       "color": "#00ffff",
       "parentId": null
+    },
+    {
+      "id": "cat-pc-ps5-dev",
+      "name": "pc-ps5-dev",
+      "color": "#004040",
+      "parentId": null
+    },
+    {
+      "id": "cat-pc_apps",
+      "name": "pc_apps",
+      "color": "#00ff00",
+      "parentId": null
     }
   ],
   "repos": [
@@ -213,10 +225,6 @@
       "categoryId": "cat-ps5_emulator"
     },
     {
-      "url": "https://github.com/ZiZc3/XPSemu",
-      "categoryId": "cat-ps5_emulator"
-    },
-    {
       "url": "https://github.com/BrinooTk/castation",
       "categoryId": "cat-ps5_emulator"
     },
@@ -245,10 +253,6 @@
       "categoryId": "cat-ps5_emulator"
     },
     {
-      "url": "https://github.com/dmzebro/PS5_RPCS3",
-      "categoryId": "cat-ps5_emulator"
-    },
-    {
       "url": "https://github.com/tsuramatsu1/psp5",
       "categoryId": "cat-ps5_emulator"
     },
@@ -270,14 +274,6 @@
     },
     {
       "url": "https://github.com/Swordpdf/PS5SX2",
-      "categoryId": "cat-ps5_emulator"
-    },
-    {
-      "url": "https://github.com/RafaelNGP/xbox-cloud-gaming-ps5",
-      "categoryId": "cat-ps5_cloud_gaming"
-    },
-    {
-      "url": "https://github.com/SynoPiia/PSXS5",
       "categoryId": "cat-ps5_emulator"
     },
     {
@@ -401,19 +397,11 @@
       "categoryId": "cat-ps5_game_dump"
     },
     {
-      "url": "https://github.com/drakmor/pgo_stub",
-      "categoryId": "cat-ps5_game_dump"
-    },
-    {
       "url": "https://github.com/tsuramatsu1/apr-emu-updater",
       "categoryId": "cat-ps5_game_dump"
     },
     {
       "url": "https://github.com/gcoding97/PS5-Game-Compressor",
-      "categoryId": "cat-ps5_game_dump"
-    },
-    {
-      "url": "https://github.com/exFAT2AMPR/exfat2ampr",
       "categoryId": "cat-ps5_game_dump"
     },
     {
@@ -641,10 +629,6 @@
       "categoryId": "cat-ps5_themes-avatars"
     },
     {
-      "url": "https://github.com/hgr9519/ps5-wallpaper-modd",
-      "categoryId": "cat-ps5_themes-avatars"
-    },
-    {
       "url": "https://github.com/StonedModder/ChronicLoader-PS5-Payload",
       "categoryId": "cat-ps5_utility"
     },
@@ -662,10 +646,6 @@
     },
     {
       "url": "https://github.com/MasterPS0/PS5-Power-Payloads-Project",
-      "categoryId": "cat-ps5_utility"
-    },
-    {
-      "url": "https://github.com/kerrdec97/ps5-date-time-sync",
       "categoryId": "cat-ps5_utility"
     },
     {
@@ -702,10 +682,6 @@
     },
     {
       "url": "https://github.com/02dnot/Jelly5",
-      "categoryId": "cat-ps5_video_player"
-    },
-    {
-      "url": "https://github.com/mortaljinx/mortalfin",
       "categoryId": "cat-ps5_video_player"
     },
     {
@@ -749,16 +725,8 @@
       "categoryId": "cat-ps5_video_player"
     },
     {
-      "url": "https://github.com/sainsaji/PS5-Audio-Passthrough-Research",
-      "categoryId": "cat-ps5_audio_utility"
-    },
-    {
       "url": "https://github.com/TsvetomirGT/SymphonyStation5",
       "categoryId": "cat-ps5_audio_utility"
-    },
-    {
-      "url": "https://github.com/ZiZc3/VLC",
-      "categoryId": "cat-ps5_video_player"
     },
     {
       "url": "https://github.com/khalifa007/CapyMobile",
@@ -813,10 +781,6 @@
       "categoryId": "cat-ps5_utility"
     },
     {
-      "url": "https://github.com/X-F1REBALL-X/HearBridge-PS5",
-      "categoryId": "cat-ps5_audio_utility"
-    },
-    {
       "url": "https://github.com/X-F1REBALL-X/wk-autoloader",
       "categoryId": "cat-ps5-webkit-autoloader"
     },
@@ -835,10 +799,6 @@
     {
       "url": "https://github.com/The7mirrors/ps5-captures",
       "categoryId": "cat-ps5_utility"
-    },
-    {
-      "url": "https://github.com/The7mirrors/msx-ps5",
-      "categoryId": "cat-ps5_emulator"
     },
     {
       "url": "https://github.com/bps2414/visor-ps5",
@@ -995,6 +955,322 @@
     {
       "url": "https://github.com/rodri0x/ps5-acestream",
       "categoryId": "cat-ps5_video_player"
+    },
+    {
+      "url": "https://github.com/griches/PS5_EternalDarkness",
+      "categoryId": "cat-ps5_emulator"
+    },
+    {
+      "url": "https://github.com/dyadf/luci-app-ps5block",
+      "categoryId": "cat-ps5_dns"
+    },
+    {
+      "url": "https://github.com/eladharels/PS5-NetDis",
+      "categoryId": "cat-ps5_dns"
+    },
+    {
+      "url": "https://github.com/jstrdev/ps5directo",
+      "categoryId": "cat-ps5_server"
+    },
+    {
+      "url": "https://github.com/nileshchakraborty/AstraPlay",
+      "categoryId": "cat-PS5_Remote"
+    },
+    {
+      "url": "https://github.com/lescanotomas/ps5-stream8",
+      "categoryId": "cat-PS5_Remote"
+    },
+    {
+      "url": "https://github.com/ChillQuant/direct-stream-ps5",
+      "categoryId": "cat-PS5_Remote"
+    },
+    {
+      "url": "https://github.com/kerrdec97/PS5-Backport-GUI",
+      "categoryId": "cat-ps5_game_dump"
+    },
+    {
+      "url": "https://github.com/kerrdec97/ps5-exfat-builder",
+      "categoryId": "cat-ps5_game_dump"
+    },
+    {
+      "url": "https://github.com/kerrdec97/PFS-Ripper",
+      "categoryId": "cat-ps5_game_dump"
+    },
+    {
+      "url": "https://github.com/kerrdec97/exFAT-Ripper",
+      "categoryId": "cat-ps5_game_dump"
+    },
+    {
+      "url": "https://github.com/kerrdec97/Game-Catalogue",
+      "categoryId": "cat-ps5_game_dump"
+    },
+    {
+      "url": "https://github.com/strongt1me/PS5-Dump-Image-Converter",
+      "categoryId": "cat-ps5_game_dump"
+    },
+    {
+      "url": "https://github.com/Guernica4u/PKG-Master",
+      "categoryId": "cat-ps5_game_dump"
+    },
+    {
+      "url": "https://github.com/RobbedColek/PKGMerge",
+      "categoryId": "cat-ps5_game_dump"
+    },
+    {
+      "url": "https://github.com/exFAT2AMPR/exfat2ampr",
+      "categoryId": "cat-ps5_game_dump"
+    },
+    {
+      "url": "https://github.com/eladharels/ps5-60FPS",
+      "categoryId": "cat-ps5_utility"
+    },
+    {
+      "url": "https://github.com/JVK3R/JobeesLair",
+      "categoryId": "cat-ps5_freeshop"
+    },
+    {
+      "url": "https://github.com/louro2023/HLDRIVE",
+      "categoryId": "cat-ps5_freeshop"
+    },
+    {
+      "url": "https://github.com/knutwurst/ps5-patchdl",
+      "categoryId": "cat-ps5_game_dump"
+    },
+    {
+      "url": "https://github.com/X-F1REBALL-X/HearBridge-PS5",
+      "categoryId": "cat-ps5_audio_utility"
+    },
+    {
+      "url": "https://github.com/ezzy1231/pulse-deck",
+      "categoryId": "cat-ps5_audio_utility"
+    },
+    {
+      "url": "https://github.com/sainsaji/PS5-Audio-Passthrough-Research",
+      "categoryId": "cat-ps5_audio_utility"
+    },
+    {
+      "url": "https://github.com/abhi245y/spot5",
+      "categoryId": "cat-ps5_audio_utility"
+    },
+    {
+      "url": "https://github.com/PlayKaraoke/PS5-PlayKaraoke-Player",
+      "categoryId": "cat-ps5_audio_utility"
+    },
+    {
+      "url": "https://github.com/DevvNirvana/afterglow",
+      "categoryId": "cat-ps5_audio_utility"
+    },
+    {
+      "url": "https://github.com/HaydenGriffin/afterglow-ps5",
+      "categoryId": "cat-ps5_audio_utility"
+    },
+    {
+      "url": "https://github.com/Yahballon/PS5_Audiobook_Reader",
+      "categoryId": "cat-ps5_audio_utility"
+    },
+    {
+      "url": "https://github.com/LoZazaMastro/CD-Player",
+      "categoryId": "cat-ps5_audio_utility"
+    },
+    {
+      "url": "https://github.com/hebiii994/ps5-solobridge",
+      "categoryId": "cat-ps5_audio_utility"
+    },
+    {
+      "url": "https://github.com/lescanotomas/ps5-stream8",
+      "categoryId": "cat-ps5_cloud_gaming"
+    },
+    {
+      "url": "https://github.com/RafaelNGP/xbox-cloud-gaming-ps5",
+      "categoryId": "cat-ps5_cloud_gaming"
+    },
+    {
+      "url": "https://github.com/blackbearreloaded/ProsperoTube",
+      "categoryId": "cat-ps5_video_player"
+    },
+    {
+      "url": "https://github.com/ZiZc3/VLC",
+      "categoryId": "cat-ps5_video_player"
+    },
+    {
+      "url": "https://github.com/axotk1k1/hdrezka-ps5",
+      "categoryId": "cat-ps5_video_player"
+    },
+    {
+      "url": "https://github.com/mortaljinx/mortalfin",
+      "categoryId": "cat-ps5_video_player"
+    },
+    {
+      "url": "https://github.com/MisterTemaki/beetlepcePS5",
+      "categoryId": "cat-ps5_emulator"
+    },
+    {
+      "url": "https://github.com/SynoPiia/PSXS5",
+      "categoryId": "cat-ps5_emulator"
+    },
+    {
+      "url": "https://github.com/lavavex/rpcs3-PS5",
+      "categoryId": "cat-ps5_emulator"
+    },
+    {
+      "url": "https://github.com/dmzebro/PS5_RPCS3",
+      "categoryId": "cat-ps5_emulator"
+    },
+    {
+      "url": "https://github.com/kamb205/KB-RPCS3",
+      "categoryId": "cat-ps5_emulator"
+    },
+    {
+      "url": "https://github.com/owenksmith24-tech/RPCS3-PS5-Port-Build-",
+      "categoryId": "cat-ps5_emulator"
+    },
+    {
+      "url": "https://github.com/BaZZtian/SilverBirch",
+      "categoryId": "cat-ps5_emulator"
+    },
+    {
+      "url": "https://github.com/The7mirrors/5S2CD",
+      "categoryId": "cat-ps5_emulator"
+    },
+    {
+      "url": "https://github.com/TheRealRetro/mupen64plus-ps5",
+      "categoryId": "cat-ps5_emulator"
+    },
+    {
+      "url": "https://github.com/The7mirrors/msx-ps5",
+      "categoryId": "cat-ps5_emulator"
+    },
+    {
+      "url": "https://github.com/mortaljinx/Seedee5",
+      "categoryId": "cat-ps5_emulator"
+    },
+    {
+      "url": "https://github.com/Lucidic15/ps5sx3-rpcn-configs",
+      "categoryId": "cat-ps5_emulator"
+    },
+    {
+      "url": "https://github.com/naye1120/NayePlmTools",
+      "categoryId": "cat-ps5_hen_loader"
+    },
+    {
+      "url": "https://github.com/Michele-M-Media/HYPERHEN",
+      "categoryId": "cat-ps5_hen_loader"
+    },
+    {
+      "url": "https://github.com/TheCriicom/omega-dashboard",
+      "categoryId": "cat-ps5_hen_loader"
+    },
+    {
+      "url": "https://github.com/codemaster953/PS5-linux-on-13.60-framework",
+      "categoryId": "cat-ps5_linux"
+    },
+    {
+      "url": "https://github.com/j4lenj/ps5-mt7921-wifi",
+      "categoryId": "cat-ps5_linux"
+    },
+    {
+      "url": "https://github.com/MasterPS0/Linux-desktop-wallpapers-for-PS5",
+      "categoryId": "cat-ps5_linux"
+    },
+    {
+      "url": "https://github.com/pLabs5/pLinux5-NG",
+      "categoryId": "cat-ps5_linux"
+    },
+    {
+      "url": "https://github.com/gzimbric/ps5-linux-porting",
+      "categoryId": "cat-ps5_linux"
+    },
+    {
+      "url": "https://github.com/muftiomar/ps5-linux-dma-bounce-fix",
+      "categoryId": "cat-ps5_linux"
+    },
+    {
+      "url": "https://github.com/ilyasturki/universe",
+      "categoryId": "cat-ps5_linux"
+    },
+    {
+      "url": "https://github.com/kerrdec97/ps5-date-time-sync",
+      "categoryId": "cat-ps5_utility"
+    },
+    {
+      "url": "https://github.com/xvvulcanvx/PS5-TabShifter",
+      "categoryId": "cat-ps5_utility"
+    },
+    {
+      "url": "https://github.com/Yahballon/PS5_Ebook_Reader",
+      "categoryId": "cat-ps5_utility"
+    },
+    {
+      "url": "https://github.com/bps2414/lineup",
+      "categoryId": "cat-ps5_utility"
+    },
+    {
+      "url": "https://github.com/c0w-ar/ps5-bar-tool",
+      "categoryId": "cat-ps5_utility"
+    },
+    {
+      "url": "https://github.com/S-Mohammad-A/Sani-PS5",
+      "categoryId": "cat-ps5_pad_utility"
+    },
+    {
+      "url": "https://github.com/vendashson-rgb/Control-PS-5",
+      "categoryId": "cat-ps5_pad_utility"
+    },
+    {
+      "url": "https://github.com/RastaFairy/Visual-PS5",
+      "categoryId": "cat-pc-ps5-dev"
+    },
+    {
+      "url": "https://github.com/CreamyG31337/ps5-tools",
+      "categoryId": "cat-pc-ps5-dev"
+    },
+    {
+      "url": "https://github.com/alfizari/PS5Debug-studio",
+      "categoryId": "cat-pc-ps5-dev"
+    },
+    {
+      "url": "https://github.com/griches/PS5_DevTools",
+      "categoryId": "cat-pc-ps5-dev"
+    },
+    {
+      "url": "https://github.com/kiikeep/KIK-Trophy",
+      "categoryId": "cat-pc_apps"
+    },
+    {
+      "url": "https://github.com/deepkicks/TitaniaPy",
+      "categoryId": "cat-pc_apps"
+    },
+    {
+      "url": "https://github.com/DV-list/Folder-updater-for-itsplk-PS5-Payloads-Mirror",
+      "categoryId": "cat-pc_apps"
+    },
+    {
+      "url": "https://github.com/hgr9519/ps5-wallpaper-modd",
+      "categoryId": "cat-ps5_themes-avatars"
+    },
+    {
+      "url": "https://github.com/ZiZc3/LiveShell",
+      "categoryId": "cat-ps5_themes-avatars"
+    },
+    {
+      "url": "https://github.com/SaveEditors/LightbarEditor",
+      "categoryId": "cat-ps5_themes-avatars"
+    },
+    {
+      "url": "https://github.com/stupiditytries/kabuki-ps5",
+      "categoryId": "cat-ps5_themes-avatars"
+    },
+    {
+      "url": "https://github.com/Darkatek7/ProsperoThemes",
+      "categoryId": "cat-ps5_themes-avatars"
+    },
+    {
+      "url": "https://github.com/strongt1me/ps5-cooling-system-center-pro",
+      "categoryId": "cat-ps5_fan"
+    },
+    {
+      "url": "https://github.com/MiladRx/Breeze",
+      "categoryId": "cat-ps5_fan"
     }
   ]
 }
