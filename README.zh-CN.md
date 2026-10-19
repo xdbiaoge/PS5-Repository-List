@@ -72,3 +72,7 @@ python tool/config_manager.py
 ### 2026-10-18 上游同步
 
 已合并原作者仓库至提交 [`59a2ba6`](https://github.com/nexgen999/PS5-Repository-List/commit/59a2ba645575882efebcb92e453a0c1c64be9137)，包含自上次 `074b563` 后的 21 次提交。上游数据库更新至 2026-10-18 07:05:32 UTC：收录记录从 210 增至 269（新增 69 条、移除 8 条），分类从 23 增至 25。同步最新 `json/repos-config.json`、`json/repos-database.json`，以及新增的待收录清单 `Repository-to-add/next_add.md` 和原作者配置工具 `tool/config_manager_v0.2.py`（该新增工具保留上游原文，原来的 `tool/config_manager.py` 继续支持简体中文）。补齐新增项目的中文简介，新增两种分类的网页与中文配置工具显示映射。保留中文版首页、React 汉化脚本、多语言 UI 词库、GitHub Pages 配置与中文文档。
+
+### 2026-10-19 上游同步
+
+已合并原作者 `nexgen999/PS5-Repository-List` 的最新提交 [`abe476e`](https://github.com/nexgen999/PS5-Repository-List/commit/abe476e4e11852c95ef6ab851c2c020fc6e6a43d) 及自上次 `59a2ba6` 后的 5 次自动仓库数据更新。数据库生成于 2026-10-19 00:40:15 UTC，收录记录从 269 变为 268（新增 3 条、移除 4 条），分类仍为 25 个。新增 Swordpdf/ProsperoEden、LedyBacer/ProsperoLight 和 quatrixone/ProsperoAI 的中文简介；同步 RetroArch 模拟核心数量变化、SwanStationPS5 原文链接更新以及 PS5 Payloads Mirror 文件夹更新工具的新说明。本次上游无前端代码变更，继续保留独立简体中文适配、GitHub Pages 发布与中文管理工具。

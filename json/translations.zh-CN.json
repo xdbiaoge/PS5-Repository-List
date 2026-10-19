@@ -120,11 +120,11 @@
     "zh": "基于 PCSX-ReARMed 的 PS5 原生 PS1 模拟器，支持封面墙、xBR 画面增强、RetroAchievements 和金手指。"
   },
   "mihawk-99/ps5_retroarch": {
-    "source": "🎮 RetroArch Homebrew for the PS5 that supports 33 cores & 44 systems.",
-    "zh": "PS5 自制版 RetroArch，支持 33 个模拟核心与 44 种游戏系统。"
+    "source": "🎮 RetroArch Homebrew for the PS5 that supports 35 cores & 44 systems.",
+    "zh": "PS5 自制版 RetroArch，支持 35 个模拟核心与 44 种游戏系统。"
   },
   "darkxex/swanstationps5": {
-    "source": "SwanStationPS5 (PSXS5 Fork to work with the SwanStation core): a PlayStation 1 emulator running natively on jailbroken PS5, based on SwanStation.  https://discord.gg/MseFnnfYzt",
+    "source": "SwanStationPS5 (PSXS5 Fork to work with the SwanStation core): a PlayStation 1 emulator running natively on jailbroken PS5, based on SwanStation.  https://discord.gg/Drx8tsqq3B",
     "zh": "基于 SwanStation 核心的 PS5 原生 PS1 模拟器，源自 PSXS5 分支。"
   },
   "stonedmodder/vita5": {
@@ -956,8 +956,8 @@
     "zh": "在 PC 上解析、分析和解密 PS5 PUP/BLS 固件文件的 Python 命令行工具，无需主机；支持 BLS 提取、第三层固件解密、PBKDF2/KMB 密钥派生及熵分析密钥测试，完整固件解密仍缺少关键密钥。"
   },
   "dv-list/folder-updater-for-itsplk-ps5-payloads-mirror": {
-    "source": "Simple solution to keep console offline and update useful payloads from desired folder on PC/MAC",
-    "zh": "在主机保持离线状态时，从 PC/Mac 指定文件夹更新常用 PS5 载荷的工具。"
+    "source": "A simple tool to track PS5 payload files in a local folder, check for updates, and keep them up to date.",
+    "zh": "监测本地文件夹中的 PS5 载荷文件、检查更新并使其保持最新的简易工具。"
   },
   "zizc3/liveshell": {
     "source": "Animated backgrounds for PS5 home screen.",
@@ -982,5 +982,17 @@
   "miladrtx/breeze": {
     "source": "PS5 fan curve payload with a web panel. Works with elfldr and Payload Manager.",
     "zh": "带网页控制面板的 PS5 风扇曲线管理载荷，兼容 elfldr 和 Payload Manager。"
+  },
+  "swordpdf/prosperoeden": {
+    "source": "Experimental Eden port for PS5",
+    "zh": "实验性 PS5 版 Eden 移植项目。"
+  },
+  "ledybacer/prosperolight": {
+    "source": "An unofficial Moonlight port (game streaming) for PS5",
+    "zh": "面向 PS5 的非官方 Moonlight 游戏串流客户端移植版。"
+  },
+  "quatrixone/prosperoai": {
+    "source": "A simple LLM-based chat app that runs on the PS5 GPU",
+    "zh": "在 PS5 GPU 上运行的基于大语言模型（LLM）的简易聊天应用。"
   }
 }
