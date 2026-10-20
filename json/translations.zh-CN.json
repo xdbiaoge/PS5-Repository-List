@@ -740,8 +740,8 @@
     "zh": "适用于已破解 PS5 的独立游戏内性能监控叠加层，支持实时硬件监测、内置网页配置面板，并显示 12 项实时指标。"
   },
   "darkxex/prosperostore": {
-    "source": "Native PS5 app store for the homebrew catalog at homebrew.page (title PPSA99000)",
-    "zh": "原生 PS5 自制程序商店，使用 homebrew.page 的自制程序目录（游戏标题 ID：PPSA99000）。"
+    "source": "Native PS5 app store for the homebrew catalog at ProsperoStore.net (title PPSA99000)",
+    "zh": "原生 PS5 自制程序商店，使用 ProsperoStore.net 的自制程序目录（游戏标题 ID：PPSA99000）。"
   },
   "thatguykalvin/prosperotv": {
     "source": "Native IPTV client for PlayStation 5 homebrew with an offline-first iptv-org catalog and hardware-accelerated H.264, HEVC, and VP9 playback.",
@@ -760,7 +760,7 @@
     "zh": "通过局域网向 PS5 传输文件的工具。"
   },
   "nileshchakraborty/astraplay": {
-    "source": "AstraPlay is an open-source PS4/PS5 Remote Play client for Android, Android TV, iOS, macOS, Windows, Linux, and Steam Deck with internet play, console discovery, and app-store installs.",
+    "source": "AstraPlay is an open-source PS4/5 Remote Play client for Android, Android TV, iOS, macOS, Windows, Linux, and Steam Deck with internet play, console discovery, and app-store installs.",
     "zh": "开源 PS4/PS5 Remote Play 客户端，支持 Android、Android TV、iOS、macOS、Windows、Linux 和 Steam Deck，提供互联网远程串流、主机发现与应用商店安装。"
   },
   "lescanotomas/ps5-stream8": {
@@ -980,8 +980,8 @@
     "zh": "面向已破解 PS5 的风扇控制、温度监控与系统管理载荷，提供网页界面，支持德语、英语、意大利语、西班牙语、法语和俄语。"
   },
   "miladrtx/breeze": {
-    "source": "PS5 fan curve payload with a web panel. Works with elfldr and Payload Manager.",
-    "zh": "带网页控制面板的 PS5 风扇曲线管理载荷，兼容 elfldr 和 Payload Manager。"
+    "source": "Custom fan curve for the PS5: a payload with a web panel and a home screen app. Live CPU and GPU temps, 24-hour history and presets.",
+    "zh": "PS5 自定义风扇曲线工具，提供带网页控制面板的载荷与主屏幕应用，可显示实时 CPU/GPU 温度、24 小时历史记录和预设配置。"
   },
   "swordpdf/prosperoeden": {
     "source": "Experimental Eden port for PS5",
@@ -994,5 +994,13 @@
   "quatrixone/prosperoai": {
     "source": "A simple LLM-based chat app that runs on the PS5 GPU",
     "zh": "在 PS5 GPU 上运行的基于大语言模型（LLM）的简易聊天应用。"
+  },
+  "premohq/ps5-ecam": {
+    "source": "Wii U, 3DS, DS, and Switch emulation for PS5 homebrew (Cemu + Azahar + Melon DS + Eden)",
+    "zh": "面向 PS5 自制程序的 Wii U、3DS、DS 和 Switch 模拟器整合项目（Cemu、Azahar、Melon DS、Eden）。"
+  },
+  "handshakehackin/youtube-maxd": {
+    "source": "Standalone YouTube app for jailbroken PS5s with Google sign-in, voice search, phone remote, family profiles, picture-in-picture, selectable video quality, SponsorBlock and DeArrow. Built on ProsperoTube and EVO Player.",
+    "zh": "面向已破解 PS5 的独立 YouTube 应用，支持 Google 登录、语音搜索、手机遥控、家庭用户档案、画中画、画质选择、SponsorBlock 和 DeArrow；基于 ProsperoTube 与 EVO Player 构建。"
   }
 }

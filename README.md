@@ -76,3 +76,7 @@ python tool/config_manager.py
 ### 2026-10-19 上游同步
 
 已合并原作者 `nexgen999/PS5-Repository-List` 的最新提交 [`abe476e`](https://github.com/nexgen999/PS5-Repository-List/commit/abe476e4e11852c95ef6ab851c2c020fc6e6a43d) 及自上次 `59a2ba6` 后的 5 次自动仓库数据更新。数据库生成于 2026-10-19 00:40:15 UTC，收录记录从 269 变为 268（新增 3 条、移除 4 条），分类仍为 25 个。新增 Swordpdf/ProsperoEden、LedyBacer/ProsperoLight 和 quatrixone/ProsperoAI 的中文简介；同步 RetroArch 模拟核心数量变化、SwanStationPS5 原文链接更新以及 PS5 Payloads Mirror 文件夹更新工具的新说明。本次上游无前端代码变更，继续保留独立简体中文适配、GitHub Pages 发布与中文管理工具。
+
+### 2026-10-20 上游同步
+
+合并上游 `nexgen999/PS5-Repository-List` 至提交 [`a15509a`](https://github.com/nexgen999/PS5-Repository-List/commit/a15509adf027ac92a7c6b970af41298e7e2b18f7)，同步自 `abe476e` 以来的 9 次提交。上游数据库更新于 2026-10-20 10:40:52 UTC，收录记录由 268 变成 267（新增 2 项、移除 3 项），分类保持 25 个不变；同步 `json/repos-config.json` 与 `json/repos-database.json`。补齐 premohq/PS5-ECAM、HandshakeHackin/youtube-maxd 的简体中文简介，并更新 darkxex/ProsperoStore、MiladRTX/Breeze、nileshchakraborty/AstraPlay 的原文映射及中文说明。上游前端未变化，继续保留中文版首页、React 汉化适配、中文多语言词库、独立简介词库、中文管理器及 GitHub Pages 配置。
