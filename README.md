@@ -80,3 +80,7 @@ python tool/config_manager.py
 ### 2026-10-20 上游同步
 
 合并上游 `nexgen999/PS5-Repository-List` 至提交 [`a15509a`](https://github.com/nexgen999/PS5-Repository-List/commit/a15509adf027ac92a7c6b970af41298e7e2b18f7)，同步自 `abe476e` 以来的 9 次提交。上游数据库更新于 2026-10-20 10:40:52 UTC，收录记录由 268 变成 267（新增 2 项、移除 3 项），分类保持 25 个不变；同步 `json/repos-config.json` 与 `json/repos-database.json`。补齐 premohq/PS5-ECAM、HandshakeHackin/youtube-maxd 的简体中文简介，并更新 darkxex/ProsperoStore、MiladRTX/Breeze、nileshchakraborty/AstraPlay 的原文映射及中文说明。上游前端未变化，继续保留中文版首页、React 汉化适配、中文多语言词库、独立简介词库、中文管理器及 GitHub Pages 配置。
+
+### 2026-10-22 上游同步
+
+已合并原作者 `nexgen999/PS5-Repository-List` 的最新提交 [`3048aef`](https://github.com/nexgen999/PS5-Repository-List/commit/3048aeff7a42d78b4d7981402444b7ef6070b19b) 及自上次 `a15509a` 后的 11 次自动数据库更新。数据库生成于 2026-10-22 08:09:31 UTC，收录仓库记录由 267 变为 266（移除 `SvenGDK/Prospero-Vibrate`），分类仍为 25 个；同步最新 `json/repos-database.json`。更新 `darkxex/SwanStationPS5` 的英文简介匹配原文及简体中文说明，避免显示已删去的 PSXS5 分支来源。其余界面和代码文件未受上游修改，继续保留默认简体中文、React 汉化适配、独立词库、中文配置工具、GitHub Pages 配置与全部自定义功能。

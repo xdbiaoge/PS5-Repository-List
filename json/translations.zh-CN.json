@@ -124,8 +124,8 @@
     "zh": "PS5 自制版 RetroArch，支持 35 个模拟核心与 44 种游戏系统。"
   },
   "darkxex/swanstationps5": {
-    "source": "SwanStationPS5 (PSXS5 Fork to work with the SwanStation core): a PlayStation 1 emulator running natively on jailbroken PS5, based on SwanStation.  https://discord.gg/Drx8tsqq3B",
-    "zh": "基于 SwanStation 核心的 PS5 原生 PS1 模拟器，源自 PSXS5 分支。"
+    "source": "SwanStationPS5: a PlayStation 1 emulator running natively on jailbroken PS5, based on SwanStation.  https://discord.gg/Drx8tsqq3B",
+    "zh": "适用于已破解 PS5 的原生 PS1 模拟器，基于 SwanStation 核心。"
   },
   "stonedmodder/vita5": {
     "source": "Play a PS Vita on the PS5 over one USB cable.",
